@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>trắc nghiệm chọn nghề</title>
+	<meta name="trắc nghiệm chọn nghề" />
+	<meta name="author" content="hencework"/>
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/http://www.datatables.net/rss.xml">
+	<!-- Data table CSS -->
+	<link href="/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+	
+	<!-- Custom CSS -->
+	<link href="/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<!--Preloader-->
+		<% include partials/head %>
+		<!-- Main Content -->
+		<div class="page-wrapper">
+			<div class="container-fluid">
+				
+				<!-- Title -->
+				<div class="row heading-bg">
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+					  <h5 class="txt-dark">Xuất dữ liệu</h5>
+					</div>
+					<!-- Breadcrumb -->
+					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+					  <ol class="breadcrumb">
+						<li><a href="/">Dashboard</a></li>
+						<li><a href="/viewtable"><span>bảng dữ liệu</span></a></li>
+						<li class="active"><span>xuất dữ liệu</span></li>
+					  </ol>
+					</div>
+					<!-- /Breadcrumb -->
+				</div>
+				<!-- /Title -->
+				
+			
+				<!-- /Row -->
+				<div class="row">
+				
+				<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+						<div class="panel panel-default card-view panel-refresh">
+							<div class="refresh-container">
+								<div class="la-anim-1"></div>
+							</div>
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">danh sách nghề</h6>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="pull-left inline-block refresh mr-15">
+										<i class="zmdi zmdi-replay"></i>
+									</a>
+									<div class="pull-left inline-block dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
+										<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>option 1</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>option 2</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>option 3</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								             
+
+
+								             <div class="table-responsive">
+											<table class="table table-hover mb-0" id="tableindex">
+												<thead >
+													<tr>
+													<th>STT</th>
+														<th>Tên nghề</th>
+														<th>Tổng số câu hỏi</th>
+														<th>Tổng điểm</th>
+													</tr>
+												</thead>
+												<tbody  id="themxemthem">
+													
+												</tbody>
+											</table>
+										</div>
+
+
+
+
+
+							</div>	
+						</div>	
+					</div>
+					
+				<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+						<div class="panel panel-default card-view panel-refresh">
+							<div class="refresh-container">
+								<div class="la-anim-1"></div>
+							</div>
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark" id="tennghe">danh sách câu hỏi </h6>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="pull-left inline-block refresh mr-15">
+										<i class="zmdi zmdi-replay"></i>
+									</a>
+									<div class="pull-left inline-block dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
+										<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>option 1</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>option 2</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>option 3</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								             
+
+
+								             <div class="table-responsive">
+											<table class="table  " id="tableindex">
+												<thead >
+													<tr>
+													<th>STT</th>
+
+														<th>câu hỏi</th>
+														<th>nội dung</th>
+														<th>điểm </th>
+													</tr>
+												</thead>
+												<tbody  id="cauhoine">
+													
+												</tbody>
+											</table>
+										</div>
+
+
+
+
+
+							</div>	
+						</div>	
+					</div>
+					</div>
+			</div>
+		
+			<!-- Footer -->
+			<footer class="footer container-fluid pl-30 pr-30">
+				<div class="row">
+					<div class="col-sm-12">
+						<p>2017 &copy; Doodle. Pampered by Hencework</p>
+					</div>
+				</div>
+			</footer>
+			<!-- /Footer -->
+			
+		</div>
+		<!-- /Main Content -->
+
+    </div>
+    <!-- /#wrapper -->
+	
+	<!-- JavaScript -->
+	
+    <!-- jQuery -->
+    <script src="/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+	<!-- Data table JavaScript -->
+	<script src="/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="/vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+	<script src="/vendors/bower_components/datatables.net-buttons/js/buttons.flash.min.js"></script>
+	<script src="/vendors/bower_components/jszip/dist/jszip.min.js"></script>
+	<script src="/vendors/bower_components/pdfmake/build/pdfmake.min.js"></script>
+	<script src="/vendors/bower_components/pdfmake/build/vfs_fonts.js"></script>
+	
+	<script src="/vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+	<script src="/vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+	<script src="/dist/js/export-table-data.js"></script>
+	
+	<!-- Slimscroll JavaScript -->
+	<script src="/dist/js/jquery.slimscroll.js"></script>
+	
+	<!-- Owl JavaScript -->
+	<script src="/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+	
+	<!-- Switchery JavaScript -->
+	<script src="/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+	
+	
+	<!-- Fancy Dropdown JS -->
+	<script src="/dist/js/dropdown-bootstrap-extended.js"></script>
+	
+	<!-- Init JavaScript -->
+	<script src="/dist/js/init.js"></script>
+	<script type="text/javascript">
+	function thaydoikhaosat(){
+
+window.location.href = "/viewtable/"+$("#selectgroup").val();
+
+}
+</script>
+	<script type="text/javascript">
+				<% %>var listcauhoi=<%-JSON.stringify(listcauhoi)%>;
+       var listnghe=<%-JSON.stringify(listnghe)%>; <% %>
+				       var listkq=[];
+             var listidnghe=[];
+      for (var i = 0; i < listnghe.length; i++) {
+        listidnghe.push(listnghe[i]._id);
+      listkq.push({id:listnghe[i]._id,ten:listnghe[i].ten,noidung:listnghe[i].noidung,ghichu:listnghe[i].ghichu,diem:1,tongsocauhoi:1,tongdiem:1,dsnghe:[]});
+      }
+   for (var i = 0; i < listcauhoi.length; i++) {
+
+for (var j = 0; j<  listcauhoi[i].nghe.length;j++) {
+
+   if( listidnghe.indexOf(listcauhoi[i].nghe[j].id)>-1){
+
+        listkq[listidnghe.indexOf(listcauhoi[i].nghe[j].id)].tongdiem+=parseInt(listcauhoi[i].nghe[j].value);
+               listkq[listidnghe.indexOf(listcauhoi[i].nghe[j].id)].tongsocauhoi+=1;
+               var tamthoi=listcauhoi[i];
+               tamthoi.diemluutam=listcauhoi[i].nghe[j].value;
+                listkq[listidnghe.indexOf(listcauhoi[i].nghe[j].id)].dsnghe.push(listcauhoi[i]);
+                console.log(listcauhoi[i]);
+        }
+}
+   
+}
+var nghehientai=listkq[0];
+for (var i = 0; i < listkq.length; i++) {
+  
+$("#themxemthem").append('<tr > <td><a href="javascript:doinghe('+i+')">'+ '<span class="txt-dark weight-500">'+i+'</span></a></span></td> <td><a href="javascript:doinghe('+i+')">'+ '<span class="txt-dark weight-500">'
+  +listkq[i].ten+'</span></a></td>  <td> <span class="txt-dark weight-500">'+listkq[i].tongsocauhoi+'</span></a></td>'+
+  '<td><a href="javascript:doinghe('+i+')">'+' <span class="txt-dark weight-500">'+listkq[i].tongdiem+'</span></a></td>'+' </tr>')
+  }
+document.getElementById("cauhoine").innerHTML="";
+if( nghehientai.dsnghe.length>0)
+  for (var i = 0; i < nghehientai.dsnghe.length; i++) {
+ $("#cauhoine").append('<tr > <td> 	<span class="txt-dark weight-500">'+i+'</span></span></td>   <td> <span class="txt-dark weight-500">'+nghehientai.dsnghe[i].cauhoi+'</span></a></td>'+
+  '<td> <span class="txt-dark weight-500">'+nghehientai.dsnghe[i].noidung+'</span></a></td>'+
+  '<td> <span class="txt-dark weight-500">'+nghehientai.dsnghe[i].diemluutam+'</span></a></td>'+' </tr>')
+  }
+  function doinghe(sovitri){
+
+  	nghehientai=listkq[parseInt(sovitri)];
+  	console.log("huy"+JSON.stringify(nghehientai));
+for (var i = 0; i < listkq.length; i++) {
+  
+$("#cauhoine").append('<tr > <td> <span class="txt-dark weight-500">'+i+'</span></a></span></td> <td> <span class="txt-dark weight-500">'
+  +listkq[i].ten+'</span></a></td>  <td> <span class="txt-dark weight-500">'+listkq[i].tongsocauhoi+'</span></a></td>'+
+  '<td> <span class="txt-dark weight-500">'+listkq[i].tongdiem+' </tr>')
+  }
+document.getElementById("cauhoine").innerHTML="";
+if( nghehientai.dsnghe.length>0)
+  for (var i = 0; i < nghehientai.dsnghe.length; i++) {
+ $("#cauhoine").append('<tr > <td> <span class="txt-dark weight-500">'+i+'</span></a></span></td>  <td> <span class="txt-dark weight-500">'+nghehientai.dsnghe[i].cauhoi+'</span></a></td>'+
+  '<td> <span class="txt-dark weight-500">'+nghehientai.dsnghe[i].noidung+'</span></a></td>'+
+  '<td> <span class="txt-dark weight-500">'+nghehientai.dsnghe[i].diemluutam+'</span></a></td>'+' </tr>')
+  }
+  }
+
+
+			</script>
+</body>
+
+</html>

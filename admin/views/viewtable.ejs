@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Khảo sát khách hàng -Admin</title>
+	<meta name="description" content="Doodle is a Dashboard & Admin Site Responsive Template by hencework." />
+	<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Doodle Admin, Doodleadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
+	<meta name="author" content="hencework"/>
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/http://www.datatables.net/rss.xml">
+	<!-- Data table CSS -->
+	<link href="/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+	
+	<!-- Custom CSS -->
+	<link href="/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<!--Preloader-->
+		<% include partials/head %>
+		<!-- Main Content -->
+		<div class="page-wrapper">
+			<div class="container-fluid">
+				
+				<!-- Title -->
+				<div class="row heading-bg">
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+					  <h5 class="txt-dark">Xuất dữ liệu</h5>
+					</div>
+					<!-- Breadcrumb -->
+					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+					  <ol class="breadcrumb">
+						<li><a href="/">Dashboard</a></li>
+						<li><a href="/viewtable"><span>bảng dữ liệu</span></a></li>
+						<li class="active"><span>xuất dữ liệu</span></li>
+					  </ol>
+					</div>
+					<!-- /Breadcrumb -->
+				</div>
+				<!-- /Title -->
+				
+				<!-- Row -->
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-default card-view">
+						<h6 class="panel-title txt-dark">danh sách khảo sát đã ghi tại 	<select class="selectgroup selectpicker"  onchange="thaydoikhaosat()" id="selectgroup" data-style="form-control btn-default btn-outline">
+                                                                     
+                                                                             
+																  <% 
+																if(listgroup!=null)  listgroup.forEach((questiongroup) =>  {
+																 { 
+																if(group!=null)
+																  if(questiongroup._id==group  ){%>
+
+													<option value="<%=questiongroup._id%>" selected><%=questiongroup.name%></option>
+															
+												 <% }else
+															{%>
+													<option value="<%=questiongroup._id%>"><%=questiongroup.name%></option>
+												 <%}
+												 }}) %>
+
+
+
+															
+															</select>
+															</h6>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="table-wrap">
+										<div class="table-responsive">
+											<table id="example" class="table table-hover display  pb-30" >
+												<thead>
+													<tr id="tabletitle">
+													<%  if(listkhaosat!=null)
+													listkhaosat[0].data.forEach((itemkhaosat) => { %>
+													<th><%=itemkhaosat.name%></th>
+
+													<% })%>
+														
+													</tr>
+												</thead>
+												<tfoot>
+													<tr id="tabletitle">
+													<%  if(listkhaosat!=null)
+													listkhaosat[0].data.forEach((itemkhaosat) => { %>
+													<th><%=itemkhaosat.name%></th>
+
+													<% })%>
+														
+													</tr>
+												</tfoot>
+												<tbody  id="tabletcontent">
+
+												  <% 
+												  if(listkhaosat!=null)
+												  listkhaosat.forEach((khaosat) => { %>
+												  <tr>
+												  	<% 		  
+												  khaosat.data.forEach((itemkhaosat) => { %>
+
+														<td><span class="txt-dark weight-500"><%=itemkhaosat.value%></span></td>
+												  <%})
+													
+												%></tr> <% })%>
+													
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<!-- /Row -->
+				<div class="row">
+					<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+						<div class="panel panel-default card-view panel-refresh">
+							<div class="refresh-container">
+								<div class="la-anim-1"></div>
+							</div>
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">danh sách các khảo sát</h6>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="pull-left inline-block refresh mr-15">
+										<i class="zmdi zmdi-replay"></i>
+									</a>
+									<div class="pull-left inline-block dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
+										<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>option 1</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>option 2</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>option 3</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								             
+
+
+								             <div class="table-responsive">
+											<table class="table table-hover mb-0" id="tableindex">
+												<thead >
+													<tr>
+													<th>STT</th>
+														<th>tên khảo sát</th>
+													</tr>
+												</thead>
+												<tbody  >
+
+												 
+																  <% 
+																  var demne=0;
+																if(listgroup!=null)  listgroup.forEach((questiongroup) =>  {
+																 { 
+																 	demne++;
+																if(group!=null)
+																 
+															{%>
+												 <tr > <td><span class="txt-dark weight-500"><%=demne%></span></td> 
+													 <td> <span class="txt-dark weight-500"><%=questiongroup.name%></span></td> 
+													</tr>
+												 <%}
+												 }}) %>
+													
+												</tbody>
+											</table>
+										</div>
+							</div>	
+						</div>	
+					</div>
+				<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+						<div class="panel panel-default card-view panel-refresh">
+							<div class="refresh-container">
+								<div class="la-anim-1"></div>
+							</div>
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">danh sách các khảo sát của nhân viên</h6>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="pull-left inline-block refresh mr-15">
+										<i class="zmdi zmdi-replay"></i>
+									</a>
+									<div class="pull-left inline-block dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
+										<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>option 1</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>option 2</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>option 3</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								             
+
+
+								             <div class="table-responsive">
+											<table class="table table-hover mb-0" id="tableindex">
+												<thead >
+													<tr>
+													<th>STT</th>
+														<th>tên nhân viên</th>
+													</tr>
+												</thead>
+												<tbody  >
+													  <% 
+																  var demne=0;
+																if(listgroup!=null)  listgroup.forEach((questiongroup) =>  {
+																 { 
+																 	demne++;
+																if(group!=null)
+																 
+															{%>
+												 <tr > <td><span class="txt-dark weight-500"><%=demne%></span></td> 
+													 <td> <span class="txt-dark weight-500"><%=questiongroup.name%></span></td> 
+													</tr>
+												 <%}
+												 }}) %>
+													
+												</tbody>
+											</table>
+										</div>
+
+
+
+
+
+							</div>	
+						</div>	
+					</div>
+					</div>
+			</div>
+			
+			<!-- Footer -->
+			<footer class="footer container-fluid pl-30 pr-30">
+				<div class="row">
+					<div class="col-sm-12">
+						<p>2017 &copy; Doodle. Pampered by Hencework</p>
+					</div>
+				</div>
+			</footer>
+			<!-- /Footer -->
+			
+		</div>
+		<!-- /Main Content -->
+
+    </div>
+    <!-- /#wrapper -->
+	
+	<!-- JavaScript -->
+	
+    <!-- jQuery -->
+    <script src="/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+	<!-- Data table JavaScript -->
+	<script src="/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="/vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+	<script src="/vendors/bower_components/datatables.net-buttons/js/buttons.flash.min.js"></script>
+	<script src="/vendors/bower_components/jszip/dist/jszip.min.js"></script>
+	<script src="/vendors/bower_components/pdfmake/build/pdfmake.min.js"></script>
+	<script src="/vendors/bower_components/pdfmake/build/vfs_fonts.js"></script>
+	
+	<script src="/vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+	<script src="/vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+	<script src="/dist/js/export-table-data.js"></script>
+	
+	<!-- Slimscroll JavaScript -->
+	<script src="/dist/js/jquery.slimscroll.js"></script>
+	
+	<!-- Owl JavaScript -->
+	<script src="/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+	
+	<!-- Switchery JavaScript -->
+	<script src="/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+	
+	
+	<!-- Fancy Dropdown JS -->
+	<script src="/dist/js/dropdown-bootstrap-extended.js"></script>
+	
+	<!-- Init JavaScript -->
+	<script src="/dist/js/init.js"></script>
+	<script type="text/javascript">
+	function thaydoikhaosat(){
+
+window.location.href = "/viewtable/"+$("#selectgroup").val();
+
+}
+</script>
+</body>
+
+</html>

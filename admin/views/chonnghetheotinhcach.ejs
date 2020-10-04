@@ -1,0 +1,418 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <title>Chọn nghề theo cách của bạn</title>
+      <meta name="description" content="ứng dụng chọn nghề theo cách của bạn" />
+      <meta name="keywords" content="ứng dụng chọn nghề, ứng dụng chọn nghề nghiệp phù hợp, ứng dụng chọn nghề tương lai" />
+      <meta name="author" content=""/>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+      <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+      <link href="/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+      <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>  
+      <!-- Custom CSS -->
+      <link href="/dist/css/stylechonnghe.css" rel="stylesheet" type="text/css">
+      <script src='/dist/js/jquery.min.js'></script>
+   </head>
+   <body>
+     <div class="wsmenucontainer">
+
+    <% include partials/menu %> 
+  <div class="wrapper">
+
+      <div id="quizzie">
+         <svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" height="0">
+            <defs>
+               <g id="line">
+                  <line id="svg_1" y2="15.666668" x2="99.666662" y1="15.666668" x1="0.999995" stroke-width="2" stroke="rgb(0, 138, 255)" fill="none" />
+                  <line stroke="rgb(0, 138, 255)" id="svg_4" y2="1" x2="8.989895" y1="1" x1="99.666661" stroke-width="2" fill="none" />
+                  <line id="svg_5" stroke="rgb(0, 138, 255)" y2="31.166662" x2="7.832443" y1="31.166662" x1="100.109209" stroke-width="2" fill="none" />
+               </g>
+            </defs>
+         </svg>
+         <h2 class="headline pulse" style="margin-top: 20px;">
+            <div class="lines">
+               <svg class="left" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+                  <g id="headline">
+                     <use xlink:href="#line" />
+                  </g>
+               </svg>
+            </div>
+            <span class="text">chọn nghề theo theo tính cách</span>
+            <div class="lines">
+               <svg class="right" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+                  <g id="headline">
+                     <use xlink:href="#line" />
+                  </g>
+               </svg>
+            </div>
+         </h2>
+         <h2 id="tieude" style="font-size: 1.3em">  Realistic - Người thực tế !</h2>
+         <table class="bang1" id="bang1" width="480" border="0" align="center" cellpadding="0" cellspacing="0" class="bao" style="color: #666;" >
+            <tbody>
+               <tr>
+                  <td valign="top" class="khongvien">
+                     <table width="530" border="0" align="center" cellpadding="4" cellspacing="2" style="border-collapse:collapse;
+                        font-family: 'Baloo Tamma', cursive;font-size: 1.2em;color: #fff;" class="bangdulieu">
+                        <tbody>
+                           <tr >
+                              <td ><span class="bao" id="txt0">Tôi có tính tự lập</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio"  data-group="0"  value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="0"  value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="0" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="0"  value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="0" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr >
+                           <tr >
+                              <td ><span class="bao" id="txt1">Tôi suy nghĩ thực tế</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio"  data-group="1" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"   data-group="1" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="1" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="1" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="1" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr >
+                              <td ><span class="bao" id="txt2">Tôi là người thích nghi với môi trường mới</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio"  data-group="2" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="2" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="2" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"   data-group="2" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="2" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td ><span class="bao" id="txt3">Tôi có thể vận hành, điều khiển các máy móc thiết bị</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio"  data-group="3" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="3" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="3" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="3" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="3"  value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td ><span class="bao" id="txt4">Tôi làm các công việc thủ công như gấp giấy, đan, móc</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio" value="1" data-group="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="4" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="4" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="4" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="4" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td ><span class="bao" id="txt5">Tôi thích tiếp xúc với thiên nhiên, động vật, cây cỏ</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio" data-group="5" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="5" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="5" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="5"  value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="5"  value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td  ><span class="bao" id="txt6">Tôi thích những công việc sử dụng tay chân hơn là trí óc</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio" data-group="6" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="6" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="6"  value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="6" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="6" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td  ><span class="bao" id="txt7">Tôi thích những công việc thấy ngay kết quả</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio" data-group="7" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="7" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="7" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="7" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="7"  value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td  ><span class="bao" id="txt8">Tôi thích làmviệc ngoài trời hơn là trong phòng học, văn phòng</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form id="caicuoi">
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio" value="1" data-group="8" name="stars-rating">
+                                          <i class="fa fa-star"  aria-hidden="true"></i>
+                                          <input type="radio"  data-group="8"  value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="8"   value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="8"  value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="8"  value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+            </tbody>
+         </table>
+         <ul class="quiz-step step1 current" id="andi" >
+            <div class="lquestion">
+               <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                  <p class="notehuy">Điểm :</p>
+                  <div class="answer-wrap " style="width: 200px;margin: 0 auto;"  onclick="tiep();">
+                     <p class="answer-text" id="txttiep">tiếp</p>
+                  </div>
+               </li>
+            </div>
+         </ul>
+         <ul id="results" >
+            <li class="results-inner">
+               <h1>Kết quả của bạn</h1>
+               <h2 id="titleresults"></h2>
+               <p id="noteresults"></p>
+               <p style="color:#d0f9c7; " id="nghanhresults"></p>
+            </li>
+            <li style="width: 100%;" >
+               <div class="answer-wrap" >
+                  <a href="/">
+                     <p class="answer-text">thử lại</p>
+                  </a>
+               </div>
+            </li>
+         </ul>
+      </div>
+
+</div>
+</div>
+      <script>
+       swal({   
+                 title: "hướng dẫn!",   
+                 text: "hãy đánh giá chính bản thân mình với \n 1 ★  Bạn thấy ý đó chưa bao giờ đúng với bạn      \n"
+                 +"2 ★ Chỉ thấy ý đó chỉ đúng trong một vài trường hợp  \n"+
+                 "3 ★ Bạn thấy ý đó chỉ một nửa là đúng với bạn\n"+
+                 "4 ★ Bạn thấy ý đó gần như là đúng với bạn trong hầu hết mọi trường hợp\n"+
+                 "5 ★ Bạn thấy ý đó là hoàn toàn đúng với bạn, không thể nào khác đi được \n",   
+                 type: "warning",   
+                 showCancelButton: true,   
+                 confirmButtonColor: "#e69a2a",   
+                 confirmButtonText: "tôi đã hiểu!",   
+                 closeOnConfirm: true 
+             }, function(){  })
+        
+           var kt=true;
+         
+         var dangovitri=1;
+         var listtieude=["Realistic - Người thực tế","Investigative - Người thích nghiên cứu"," Artistic - Người có tính nghệ sĩ","Social - người có Tính xã hội ","Enterprising - Người dám nghĩ dám làm","Conventional - người công chức"];
+         
+         var listquestion= new Array(); 
+         listquestion[0]= new Array("Tôi có tính tự lập","Tôi suy nghĩ thực tế","Tôi là người thích nghi với môi trường mới","Tôi có thể vận hành, điều khiển các máy móc thiết bị","Tôi làm các công việc thủ công như gấp giấy, đan, móc","Tôi thích tiếp xúc với thiên nhiên, động vật, cây cỏ","Tôi thích những công việc sử dụng tay chân hơn là tríóc"," Tôi thích những công việc thấy ngay kết quả","  Tôi thích làmviệc ngoài trời hơn là trong phòng học, văn phòng" );
+         listquestion[1]= new Array("Tôi có tìm hiểu khám phá nhiều vấn đề mới","Tôi có khả năng phân tích vấn đề","Tôi biết suy nghĩ một cách mạch lạc, chặt chẽ","Tôi thích thực hiện các thí nghiệm hay nghiên cứu","Tôi có khả năng tổng hợp, khái quát, suy đoán những vấn đề","Tôi thích những hoạt động điều tra, phân loại, kiểm tra, đánh giá","Tôi tự tổ chức công việc mình phái làm"," Tôi thích suy nghĩ về những vấn đề phức tạp, làm những công việc phức tạp","Tôi có khả năng giải quyết các vấn đề" );
+         listquestion[2]= new Array("Tôi là người dễ xúc động ","Tôi có óc tưởng tượng phong phú","Tôi thích sự tự do, không theo những quy định , quy tắc","Tôi có khả năng thuyết trình, diễn xuất","Tôi có thể chụp hình hoặc vẽ tranh, trang trí, điêu khắc","Tôi có năng khiếu âm nhạc","Tôi có khả năng viết, trình bày những ý tưởng của mình","Tôi thích làm những công việc mới, những công việc đòi hỏi sự sáng tạo","Tôi thoải mái bộc lộ những ý thích" );
+         listquestion[3]= new Array("Tôi là người thân thiện, hay giúp đỡ người khác","Tôi thích gặp gỡ, làm việc với con người","Tôi là người lịch sự, tử tế","Tôi thích khuyên bảo, huấnluyện hay giảng giái cho người khác","Tôi là người biệt lắng nghe","Tôi thích các hoạt động chăm sóc sức khỏe của bản thân và người khác","Tôi thích các hoạt độngvì mục tiêu chung của công đồng, xã hội","Tôi mong muốn mình có thể đóng góp để xã hội tốt đẹp hơn","Tôi mong muốn mình có thể đóng góp để xã hội tốt đẹp hơn");
+         listquestion[4]= new Array("Tôi là người có tính phiêu lưu, mạo hiểm","Tôi có tính quyết đoán","Tôi là người năng động","Tôi có khả năng diễn đạt, tranh luận, và thuyết phục người khác","Tôi thíc các việc quản lý, đánh giá","Tôi thường đặt ra các mục tiêu, kế hoạch trong cuộc sống"," Tôi thích gây ảnh hưởng đến người khác"," Tôi là người thích cạnh tranh, và muốn mình giói hơn người khác"," Tôi muốn người khác phải kính trọng, nể phục tôi" );
+         listquestion[5]= new Array(  "Tôi là người có đầu óc sắp xếp, tổ chức","Tôi có tính cẩn thận","Tôi là người chu đáo, chính xác và đáng tin cậy","Tôi thích công việc tính toán sổ sách, ghi chép số liệu"," Tôi thíc các công việc lưu trữ, phân loại, cập nhất thông tin"," Tôi thường đặt ra những mục tiêu, kế hoạch trong cuộc sống","Tôi thích dự kiến các khoản thu chi","Tôi thích lập thời khóa biểu, sắp xếp lịch làm việc","Tôi thích làm việc với các con số, làm việc theo hướng dẫn, quy trình"   );
+         var listtketqua=[{title:"Kiểu người R (Realistic - Người thực tế)",note:"Người thuộc nhóm sở thích nghề nghiệp này thường có khả năng về kỹ thuật, công nghệ, hệ thống; ưa thích làm việc với đồ vật, máy móc, động thực vật; thích làm các công việc ngoài trời.",nghanh:"Ngành nghề phù hợp với nhóm này bao gồm những nghề về kiến trúc, an toàn lao động, nghề mộc, xây dựng, thủy sản, kỹ thuật, máy tàu thủy, lái xe, huấn luyện viên, nông - lâm nghiệp (quản lý trang trại, nhân giống cá, lâm nghiệp...), cơ khí (chế tạo máy, bảo trì và sửa chữa thiết bị, luyện kim, cơ khí ứng dụng, tự động...), điện - điện tử, địa lý - địa chất (đo đạc, vẽ bản đồ địa chính), dầu khí, hải dương học, quản lý công nghiệp..."},{title:"Kiểu người I (Investigative - Người nghiên cứu)",note:"Có khả năng về quan sát, khám phá, phân tích đánh giá và giải quyết các vấn đề.",nghanh:"Ngành nghề phù hợp với nhóm này bao gồm: Các ngành thuộc lĩnh vực khoa học tự nhiên (toán, lý, hóa, sinh, địa lý, địa chất, thống kê...); khoa học xã hội (nhân học, tâm lý, địa lý...); y - dược (bác sĩ gây mê, hồi sức, bác sĩ phẫu thuật, nha sĩ...); khoa học công nghệ (công nghệ thông tin, môi trường, điện, vật lý kỹ thuật, xây dựng...); nông lâm (nông học, thú y...)."},{title:" Kiểu người A (Artistic - Nghệ sỹ):",note:"Có khả năng về nghệ thuật, khả năng về trực giác, khả năng tưởng tượng cao, thích làm việc trong các môi trường mang tính ngẫu hứng, không khuôn mẫu.",nghanh:"Ngành nghề phù hợp với nhóm này bao gồm: Các ngành về văn chương; báo chí (bình luận viên, dẫn chương trình...); điện ảnh, sân khấu, mỹ thuật, ca nhạc, múa, kiến trúc, thời trang, hội họa, giáo viên dạy sử/Anh văn, bảo tàng, bảo tồn..."},{title:"Kiểu người S (Social - Xã hội)",note:"Có khả năng về ngôn ngữ, giảng giải, thích làm những việc như giảng giải, cung cấp thông tin, sự chăm sóc, giúp đỡ, hoặc huấn luyện cho người khác.",nghanh:"Ngành nghề phù hợp với nhóm này bao gồm: sư phạm; giảng viên; huấn luyện viên điền kinh; tư vấn - hướng nghiệp; công tác xã hội, sức khỏe cộng đồng, thuyền trưởng, thư viện, bác sĩ chuyên khoa, thẩm định giá, nghiên cứu quy hoạch đô thị, kinh tế gia đình, tuyển dụng nhân sự, cảnh sát, xã hội học, bà đỡ, chuyên gia về X-quang, chuyên gia dinh dưỡng..."},{title:"Kiểu người E (Enterprise - Thiên phú lãnh đạo)",note:"Có khả năng về kinh doanh, mạnh bạo, dám nghĩ dám làm, có thể gây ảnh hưởng, thuyết phục người khác, có khả năng quản lý.",nghanh:"Ngành nghề phù hợp với nhóm này bao gồm: Các ngành về quản trị kinh doanh (quản lý khách sạn, quản trị nhân sự...), thương mại, marketing, kế toán – tài chính, luật sư, dịch vụ khách hàng, tiếp viên hàng không, thông dịch viên, pha chế rượu, kỹ sư công nghiệp (ngành kỹ thuật hệ thống công nghiệp), bác sĩ cấp cứu, quy hoạch đô thị, bếp trưởng (nấu ăn), báo chí (phóng viên, biên tập viên...)..."},{title:"Kiểu người C (Conventional - Mẫu người công chức)",note:"Có khả năng về số học, thích thực hiện những công việc chi tiết, thích làm việc với những số liệu, theo chỉ dẫn của người khác hoặc các công việc văn phòng.",nghanh:"Ngành nghề phù hợp với nhóm này bao gồm: Các ngành nghề về hành chính, thống kê, thanh tra ngành, người giữ trẻ, điện thoại viên..."}];
+         var listsum = [0, 0,0,0, 0,0, 0, 0,0, 0,0];
+         var listdiem = [-1, -1, -1,-1, -1, -1,-1, -1, -1];
+         jQuery(function($){
+         
+         let dbg = $("#debug-output");
+         let numTimesClicked = $("#num-times-clicked");
+         $(document).on("click", ".stars-container input[type='radio']", function(e){
+         me=$(this);
+         
+         // alert("by pham hoang huy")
+         
+         let newClickedVal = parseInt(numTimesClicked.html()) + 1;
+         numTimesClicked.html(newClickedVal);
+         dbg.html($("form").serialize());
+         $(this).siblings(".selected-star").removeClass("selected-star");
+         let starsToSelect = $(this).next(".fa-star").add($(this).prevAll(".fa-star"));
+         starsToSelect.addClass("selected-star");
+         listdiem[parseInt(me.data("group"))]=me.val();
+         listsum[dangovitri]=0;
+         kt=false;
+         for (var i = 0; i < listdiem.length; i++) {
+         if(parseInt(listdiem[i])==-1){
+         kt=true;
+         
+         }else{
+          listsum[dangovitri]+=  parseInt(listdiem[i]);
+         }
+         }
+         $(".notehuy").html( dangovitri+"/"+listquestion.length+" Điểm: "+   listsum[dangovitri]);
+         
+         });
+         });
+         $(".notehuy").html( dangovitri+"/"+listquestion.length+" Điểm: "+   listsum[dangovitri]);
+         
+         function tiep(){
+         
+         
+         if(kt){
+         swal({   
+                 title: "bạn chưa chọn xong!",   
+                 text: "bạn phải tích hết các đánh giá sao, ít nhất 1 sao!",   
+                 type: "warning",   
+                 showCancelButton: true,   
+                 confirmButtonColor: "#e69a2a",   
+                 confirmButtonText: "tôi đã hiểu!",   
+                 closeOnConfirm: true 
+             }, function(){  })
+         }else{
+         
+         if(dangovitri==listquestion.length){
+         
+         // alert(listsum[0]+"fasdfs"+listsum[1]+"dfasdfsd"+listsum[2])
+         
+         var thanglonnhat=0;
+         var vitrilonnhat=0
+         for (var i = 0; i <  listsum.length; i++) {
+           if(listsum[i]>thanglonnhat){
+           thanglonnhat=listsum[i];
+         vitrilonnhat=i;
+           }
+         }
+         
+         swal({   
+                 title: "bạn là :"+listtketqua[vitrilonnhat-1].title,   
+                 text: listtketqua[vitrilonnhat-1].nghanh,   
+                 type: "success",   
+                 showCancelButton: true,   
+                 confirmButtonColor: "#e69a2a",   
+                 confirmButtonText: "đã rõ!",   
+                 closeOnConfirm: true 
+             }, function(){ 
+              
+         
+              })
+         $("#andi").hide();
+         $("#tieude").hide();
+         $("#notehuy").hide();
+         
+         $("#bang1").hide();
+                   $("#titleresults").html(listtketqua[vitrilonnhat-1].title);
+         
+                   $("#noteresults").html(listtketqua[vitrilonnhat-1].note);
+         
+                   $("#nghanhresults").html(listtketqua[vitrilonnhat-1].nghanh);
+         $("#results").show("flow");
+         }else{
+         $("#bang1").siblings(".selected-star").removeClass("selected-star");
+         $("#tieude").html(listtieude[dangovitri]);
+         for (var i = 0; i < listquestion[dangovitri].length; i++) {
+         $("#txt"+i).html(listquestion[dangovitri][i]);
+         }
+         
+            $("#bang1").hide();
+         $("#bang1").show("flow");
+           if(dangovitri==listquestion.length-1)
+         $("#txttiep").html("Hoàn tất");
+         $("i").removeClass("selected-star");
+         dangovitri++;
+         listdiem = [-1, -1, -1,-1, -1, -1,-1, -1, -1];
+         // alert(listsum[0]+"fasdfs"+listsum[1]+"dfasdfsd"+listsum[2])
+         $(".notehuy").html( dangovitri+"/"+listquestion.length+" Điểm: "+   listsum[dangovitri]);
+         
+         }
+         }
+         }
+      </script>
+   </body>
+</html>-

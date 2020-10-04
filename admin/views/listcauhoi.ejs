@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>danh sách câu hỏi</title>
+        <meta name="description" content="trắc nghiệm chọn nghề"/>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <!-- vector map CSS -->
+        <link href="/vendors/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- Footable CSS -->
+        <link href="/vendors/bower_components/FooTable/compiled/footable.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Custom CSS -->
+        
+        <!-- bootstrap-select CSS -->
+        <link href="/vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
+        
+
+        <!-- multi-select CSS -->
+        <link href="/vendors/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css"/>
+
+            <link href="/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+        <link href="/dist/css/style.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+        
+        </style>
+    </head>
+    <body>
+    <!--Preloader-->
+
+   <% include partials/head %>
+   <!-- Main Content -->
+   <div class="page-wrapper">
+      <div class="container-fluid">
+         <!-- Title -->
+         <div class="row heading-bg">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+               <h5 class="txt-dark">products</h5>
+            </div>
+            <!-- Breadcrumb -->
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+               <ol class="breadcrumb">
+                  <li><a href="index.html">Dashboard</a></li>
+                  <li><a href="#"><span>danh sách</span></a></li>
+                  <li class="active"><span>cauhoi</span></li>
+               </ol>
+            </div>
+            <!-- /Breadcrumb -->
+         </div>
+         <!-- /Title -->
+         <!-- Product Row One -->
+         <div class="row">
+         </div>
+         <a  type="button" class="btn btn-warning  btn-outline btn-anim login-window"  href="#login-box" style="margin-top: 20px;width:150px;"><i class="fa fa-pencil"></i><span class="btn-text">thêm mới</span></a>
+         <div class="row" style="margin-top: 20px" id="danhsach">
+            <%var dem=0;%>
+            <%
+               if(listcauhoi!=null)
+               if(listcauhoi.length>0)
+                listcauhoi.forEach((_cauhoi) => {{ %>
+            <%dem++%>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6" id="cauhoi<%=dem%>">
+               <div class="panel panel-default card-view pa-0">
+                  <div class="panel-wrapper collapse in">
+                     <div class="panel-body pa-0">
+                        <article class="col-item">
+                           <div class="photo">
+                              <div class="options">
+                                 <a  class="font-18 txt-grey mr-10 pull-left" onclick="sua('<%=_cauhoi._id%>','cauhoi'+<%=dem%>)"><i class="zmdi zmdi-edit"></i></a>
+                                 <a onclick="xoa('<%=_cauhoi._id%>','<%=_cauhoi.anh%>','cauhoi'+<%=dem%>);" class="font-18 txt-grey pull-left sa-warning"><i class="zmdi zmdi-close"></i></a>
+                              </div>
+                              <a href="javascript:void(0);"> <img src="<%=_cauhoi.anh%>" class="img-responsive" alt="Product Image" /> </a>
+                           </div>
+                           <div class="info">
+                              <p>
+                                 <%=dem%>
+                              </p>
+                              <h6><%=_cauhoi.cauhoi%></h6>
+                              <div class="product-rating inline-block">
+                                 <a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star-outline mr-0"></a>
+                              </div>
+                              <span class="head-font block text-warning font-16">  <%=_cauhoi.noidung%></span>
+                           </div>
+                        </article>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <% }}) %>
+            <!-- /Product Row Four -->
+            <style type="text/css">
+               #over {
+               display: none;
+               background: #000;
+               position: fixed;
+               left: 0;
+               top: 0;
+               width: 100%;
+               height: 100%;
+               opacity: 0.8;
+               z-index: 999;
+               }
+               a,
+               a:visited,
+               a:active {
+               text-decoration: none;
+               }
+               .login {
+               height: auto;
+               width: auto;
+               font-family: Verdana, Arial, Helvetica, sans-serif;
+               font-size: 14px;
+               padding-bottom: 5px;
+               display: none;
+               overflow: hidden;
+               position: absolute;
+               z-index: 99999;
+               left: 40%;
+               top: 10%;
+               margin-left: -300px;
+               }
+               .login .login_title {
+               color: white;
+               font-size: 16px;
+               padding: 8px 0 5px 8px;
+               text-align: left;
+               }
+               .login-content span {
+               display: block;
+               }
+               .login-content {
+               padding-left: 35px;
+               margin-left: 5px;
+               margin-right: 5px;
+               height: auto;
+               padding-top: 15px;
+               overflow: hidden;
+               }
+               .img-close {
+               float: right;
+               margin-top: -43px;
+               margin-right: 5px
+               }
+               .button {
+               display: inline-block;
+               min-width: 46px;
+               text-align: center;
+               color: #444;
+               font-size: 14px;
+               font-weight: 700;
+               height: 36px;
+               padding: 0px 8px;
+               line-height: 36px;
+               border-radius: 4px;
+               transition: all 0.218s ease 0s;
+               border: 1px solid #DCDCDC;
+               background-color: #F5F5F5;
+               background-image: -moz-linear-gradient(center top, #F5F5F5, #F1F1F1);
+               cursor: pointer;
+               }
+               .button:hover {
+               border: 1px solid #DCDCDC;
+               text-decoration: none;
+               -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+               -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+               box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+               }
+               .submit-button {
+               display: inline-block;
+               padding: auto;
+               margin: 15px 75px;
+               width: 150px;
+               }
+            </style>
+           
+            <div class="login" id="login-box">
+               <a class="close" href="#"><img class="img-close" title="Close Window" alt="Close" src="close.png" /></a>
+               <div class="login-content" action="#" method="post">
+                  <div style="width: 100%" class="col-sm-12">
+                     <div class="modal-dialog" role="document">
+                        <form class="modal-content form-horizontal" action="/api/cauhoi"  method="post" id="editor" style="width: 100%; margin: 0 auto;">
+                           <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                              <h5 class="modal-title" id="editor-title">thêm cauhoi</h5>
+                           </div>
+                           <div class="modal-body">
+                              <input type="text" id="id" name="id" class="hidden" />
+                              <div class="panel panel-default card-view">
+                                 <div class="">
+                                    <div class="panel-body">
+                                       <div class="panel-group accordion-struct" id="accordion_1" role="tablist" aria-multiselectable="true">
+                                          <div class="panel panel-default">
+                                             <div class="panel-heading activestate" role="tab" id="heading_1">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion_1" href="#collapse_1" aria-expanded="true">Thông tin chung</a>
+                                             </div>
+                                             <div id="collapse_1" class="panel-collapse collapse in" role="tabpanel">
+                                                <div class="panel-body pa-15">
+                                                   <div class="form-group required">
+                                                      <div class="col-sm-12">
+                                                         <label for="cauhoi" class=" control-label">Yêu cầu phẩm chất hay năng lực </label>
+                                                         <input type="text" class="form-control" id="cauhoi" name="cauhoi" placeholder="câu hỏi " required>
+                                                      </div>
+                                                   </div>
+                                                   <div class="form-group required">
+                                                      <div class="col-sm-12">
+                                                         <label for="mô tả" class=" control-label">mô tả câu hỏi</label>
+                                                         <input type="text" class="form-control" id="noidung" name="noidung" placeholder="mô tả ">
+                                                      </div>
+                                                   </div>
+                                                   <div class="form-group required">
+                                                      <div class="col-sm-12">
+                                                         <label for="anh" class=" control-label">ảnh câu hỏi </label>
+                                                         <input type="file" name="anh" id="file" required />
+                                                      </div>
+                                                   </div>
+                                                   <!--     <div class="form-group required">
+                                                      <div class="col-sm-12">
+                                                          <label for="dacdiem" class=" control-label">silde ảnh </label>
+                                                          <input type="file" name="slide" data-default-file="/images/logo.png" id="file" multiple />
+                                                          <div class="clearfix"></div>
+                                                      </div>
+                                                      </div> -->
+                                                   <div class="form-group required">
+                                                      <div class="col-sm-12">
+                                                         <label for="nghe" class=" control-label">những nghề  </label>
+                                                            <!-- Row -->
+                    
+                               
+                                            <div class="col-sm-12" id="chinhsuane">
+                                                <select id='pre-selected-options' multiple='multiple' class="nghe" name="nghe" onchange="xemnao()">
+                                                   <% if(listnghe!=null)
+               if(listnghe.length>0)
+                listnghe.forEach((_nghe) => {%>
+                                                    <option value='<%=_nghe._id%>'><%=_nghe.ten%>  </option>
+                                                   
+                                                <% })    %>
+                                                </select>
+                            
+                        
+                                                      
+                                                </div>
+                                             </div>
+                                          </div>
+                                                </div> 
+                                                   <div class="form-group required">
+                                                      <div class="col-sm-12">
+                                                         <label for="nghe" class=" control-label">điểm nghề  </label>
+                                                            <!-- Row -->
+                                                               <div class="col-sm-12" >
+                                                           <% if(listnghe!=null)      if(listnghe.length>0)
+                listnghe.forEach((_nghe) => {%>
+                <div id="<%=_nghe.id%>">
+                    <label  class=" control-label"> <%=_nghe.ten%> </label>
+                                                  
+                                                       <input type="number" id="id<%=_nghe.id%>" value="0">
+                                                     </div>
+                                                <% })    %>
+                                                     </div>
+                
+                               
+                                         
+                                             </div>
+                                          </div>
+                                          <div class="panel panel-default">
+                                             <div class="panel-heading" role="tab" id="heading_2">
+                                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href="#collapse_2" aria-expanded="false">ghi chú</a>
+                                             </div>
+                                             <div id="collapse_2" class="panel-collapse collapse" role="tabpanel">
+                                                <div class="panel-body pa-15">
+                                                   <div class="form-group required">
+                                                      <div class="col-sm-12">
+                                                         <label for="ghichu" class=" control-label">chi ghú </label>
+                                                         <textarea class="form-control" id="ghichu" name="ghichu" placeholder="thêm đặc điểm" rows="4" style=" width
+                                                            :100%"></textarea>
+                                                      </div>
+                                                   </div>
+                                                  
+                                                 
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="form-group required">
+                                 <div class="col-sm-12">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="modal-footer">
+                                <button type="button" class="btn btn-warning  btn-outline btn-anim" id="chinhsua" onclick="updatecauhoi()">Lưu thay đổi</button>
+                              <button type="button" class="btn btn-warning  btn-outline btn-anim" id="themt" onclick="themcauhoi()">Thêm mới</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">bỏ qua</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Footer -->
+         <footer class="footer container-fluid pl-30 pr-30">
+            <div class="row">
+               <div class="col-sm-12">
+                  <p>2017 &copy; aiitsme.com</p>
+               </div>
+            </div>
+         </footer>
+         <!-- /Footer -->
+      </div>
+      <!-- /Main Content -->
+   </div>
+   <!-- /#wrapper -->
+   <!-- JavaScript -->
+   <!-- jQuery -->
+   <script src="/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+   <!-- Bootstrap Core JavaScript -->
+   <script src="/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+   <!-- Slimscroll JavaScript -->
+   <script src="/dist/js/jquery.slimscroll.js"></script>
+   <script src="/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+   <script src="/vendors/bower_components/FooTable/compiled/footable.min.js" type="text/javascript"></script>
+   <!-- ở đây thêm mơi -->
+   <!--     <script src="/dist/js/listuser.js"></script>
+      -->
+
+            <!-- Select2 JavaScript -->
+        <script src="/vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+        <script src="/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+                <!-- Multiselect JavaScript -->
+        <script src="/vendors/bower_components/multiselect/js/jquery.multi-select.js"></script>
+   <!-- Slimscroll JavaScript -->
+   <script src="/dist/js/jquery.slimscroll.js"></script>
+   <!-- Bootstrap Daterangepicker JavaScript -->
+   <script src="/vendors/bower_components/dropify/dist/js/dropify.min.js"></script>
+   <!-- Form Flie Upload Data JavaScript -->
+   <script src="/dist/js/form-file-upload-data.js"></script>
+   <!-- Owl JavaScript -->
+   <script src="/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+   <!-- Sweet-Alert  -->
+   <script src="/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+   <script src="/dist/js/sweetalert-data.js"></script>
+   <!-- Switchery JavaScript -->
+   <script src="/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+   <!-- Fancy Dropdown JS -->
+   <script src="/dist/js/dropdown-bootstrap-extended.js"></script>
+   <!-- Init JavaScript -->
+   <script src="/dist/js/init.js"></script>
+    <!-- jQuery -->
+     
+        <!-- Moment JavaScript -->
+        
+        
+        <!-- Select2 JavaScript -->
+        <script src="/vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+        
+        <!-- Bootstrap Select JavaScript -->
+        <script src="/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        
+        <!-- Bootstrap Tagsinput JavaScript -->
+        <script src="/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+        
+        <!-- Bootstrap Touchspin JavaScript -->
+        <script src="/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+        
+        <!-- Multiselect JavaScript -->
+        <script src="/vendors/bower_components/multiselect/js/jquery.multi-select.js"></script>
+        
+         
+        <!-- Bootstrap Switch JavaScript -->
+        <script src="/vendors/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+        
+        <!-- Bootstrap Datetimepicker JavaScript -->
+        <script type="text/javascript" src="/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        
+        <!-- Form Advance Init JavaScript -->
+        <script src="/dist/js/form-advance-data.js"></script>
+        
+        <!-- Slimscroll JavaScript -->
+        <script src="/dist/js/jquery.slimscroll.js"></script>
+    
+        <!-- Fancy Dropdown JS -->
+        <script src="/dist/js/dropdown-bootstrap-extended.js"></script>
+        
+    
+        <!-- Init JavaScript -->
+
+   <script type="text/javascript">
+   <%
+%>
+ var listnghe=<%-JSON.stringify(listnghe)%><% %>
+var listidnghe=[];
+for(var i=0;i<listnghe.length;i++){
+listidnghe.push(listnghe[i]._id);
+}
+      function thaydoikhaosat() {
+          window.location.href = "/admin/quanlycauhoi/" + $("#selectgroup").val();
+      
+      
+      }
+      $(document).ready(function() {
+   
+
+          $('a.login-window').click(function() {
+             $("#cauhoi").val(""); $("#noidung").val(""); $(".nghe").val("")== $("#file").val("");
+ $(".ms-selected").click();
+              //lấy giá trị thuộc tính href - chính là phần tử "#login-box"
+              var loginBox = $(this).attr('href');
+          $('#themt').show();
+           $('#chinhsua').hide();
+              //cho hiện hộp đăng nhập trong 300ms
+              $(loginBox).fadeIn(300);
+      
+              // thêm phần tử id="over" vào sau body
+              $('body').append('<div id="over">');
+              $('#over').fadeIn(300);
+      
+              return false;
+          });
+      
+          // khi click đóng hộp thoại
+          $(document).on('click', ".close", function() {
+              $('#over, .login').fadeOut(300, function() {
+                  $('#over').remove();
+              });
+              return false;
+          });
+        
+      });
+      var idsua="";
+      var divsua="";
+      function sua(cauhoine,iddivsua){
+                idsua=cauhoine;
+                divsua=iddivsua;
+
+         $('#themt').hide();
+           $('#chinhsua').show();
+      var thu=JSON.stringify(cauhoine);
+      var loginBox = $("a.login-window").attr('href');
+      
+              //cho hiện hộp đăng nhập trong 300ms
+              $(loginBox).fadeIn(300);
+      $(".ms-selected").click();
+              // thêm phần tử id="over" vào sau body
+              $('body').append('<div id="over">');
+              $('#over').fadeIn(300);
+
+       $.get("/api/cauhoi/"+cauhoine, function(data, status){
+           $('#cauhoi').val(data.cauhoi);
+             $('#noidung').val(data.noidung);
+                $('#ghichu').val(data.ghichu);
+                   // $('#file').val(data.anh);
+                   // $('.nghe')[0].val( data.nghe);
+                   var stringthem="";
+                    for (var i = 0; i < listidnghe.length; i++) {
+            $("#id"+listidnghe[i]).val(0); 
+             
+            $("#"+listidnghe[i]).hide(); 
+            }
+                   for (var i = 0; i < data.nghe.length; i++) {
+                        if(listidnghe.indexOf(data.nghe[i].id)>-1)
+                      {
+  $("#id"+data.nghe[i].id).val(data.nghe[i].value); 
+                   $(".ms-elem-selectable")[listidnghe.indexOf(data.nghe[i].id)].click();
+                   }
+                   }
+
+// $("#chinhsuane").html(stringthem);
+
+
+    });
+              return false;
+      
+      }
+     
+              function updatecauhoi() {
+           var kiemtra = false;
+           if ($("#cauhoi").val() == "") {
+             kiemtra = true;
+             swal({
+               title: "bạn chưa điền câu hỏi",
+               text: "vui lòng điền đầy đủ thông tin",
+               type: "warning",
+               showCancelButton: true,
+               confirmButtonColor: "#e69a2a",
+               confirmButtonText: "tôi đã hiểu!",
+               closeOnConfirm: true
+             }, function() {
+
+             });
+
+           } else
+
+           if ($("#noidung").val() == "") {
+             kiemtra = true;
+
+             swal({
+               title: "bạn chưa điền nội dung",
+               text: "vui lòng điền đầy đủ thông tin",
+               type: "warning",
+               showCancelButton: true,
+               confirmButtonColor: "#e69a2a",
+               confirmButtonText: "tôi đã hiểu!",
+               closeOnConfirm: true
+             }, function() {
+
+             });
+           } else
+           if ($(".nghe").val() == null) {
+             kiemtra
+             swal({
+               title: "bạn chưa chọn nghề",
+               text: "vui lòng điền đầy đủ thông tin",
+               type: "warning",
+               showCancelButton: true,
+               confirmButtonColor: "#e69a2a",
+               confirmButtonText: "tôi đã hiểu!",
+               closeOnConfirm: true
+             }, function() {
+
+             });
+           } 
+
+           if (kiemtra) {} else {
+             demne++;
+             var fileInput = document.getElementById('file');
+
+             var file = fileInput.files[0];
+             // fd dung de luu gia tri goi len
+             var fd = new FormData();
+             fd.append('file', file);
+
+
+             function getFormData(fromne) {
+               var unindexed_array = $(fromne).serializeArray();
+               var indexed_array = {};
+
+               var listdiemnghe=[];
+
+
+
+   for (var i = 0; i < $("#pre-selected-options").val().length; i++) {
+            // alert("DFAsdf"+$("#pre-selected-options").val()[i]);
+listdiemnghe[i]={value:""+$("#id"+$("#pre-selected-options").val()[i]).val()};
+             
+             }
+
+         var thuthoi={diemnghe:listdiemnghe};
+             console.log("nghe"+listdiemnghe);
+
+  fd.append("diemnghe",JSON.stringify(listdiemnghe ));
+
+               $.map(unindexed_array, function(n, i) {
+             if(n['name']=="anh" && n['value']==""){
+   
+}
+else 
+
+                 fd.append(n['name'], n['value']);
+               });
+
+               return indexed_array;
+             }
+             var tam = getFormData("#editor");
+             console.log(tam);
+
+             // fd.append("datainsert",JSong.stringify(tam));
+
+             // xhr dung de goi data bang ajax
+             var xhr = new XMLHttpRequest();
+             xhr.open('POST', '/api/cauhoi/update/'+idsua, true);
+             xhr.upload.onprogress = function(e) {
+               if (e.lengthComputable) {
+
+               }
+             };
+             xhr.onload = function() {
+               if (this.status == 200) {
+                 $('#over, .login').fadeOut(300, function() {
+                   $('#over').remove();
+                 });
+
+
+                 var dataval = JSON.parse(this.response);
+                 dataval.id = dataval._id;
+                 console.log(dataval.id);
+
+                 $(divsua).html('<div class="panel panel-default card-view pa-0"><div class="panel-wrapper collapse in"><div class="panel-body pa-0"><article class="col-item"><div class="photo"><div class="options"><a onclick="\''+dataval._id+'\',\''+divsua+'\'" class="font-18 txt-grey mr-10 pull-left"><i class="zmdi zmdi-edit"></i></a><a onclick="xoa(\'' + dataval._id + '\',\'' + dataval.anh + '\',\'cauhoithem' + demne + '\');" class="font-18 txt-grey pull-left sa-warning"><i class="zmdi zmdi-close"></i></a></div> <a href="javascript:void(0);"> <img src="' + dataval.anh + '" class="img-responsive" alt="Product Image" /> </a></div><div class="info"> <p> 1 </p><h6>' + dataval.cauhoi + '</h6>  <div class="product-rating inline-block"> <a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star-outline mr-0"></a></div><span class="head-font block text-warning font-16">  ' + dataval.noidung + '</span></div></article></div> </div></div> ');
+
+                 swal({
+                   title: "thêm mới hoàn thành!",
+                   type: "success",
+                   text: this.response,
+                   confirmButtonColor: "#469408",
+                   timer: 1000
+                 });
+                 console.log("xem " + this.response);
+
+                 // data.id =this.response._id;
+
+                 // ft.rows.add(dataval);
+
+
+               };
+             };
+             xhr.send(fd);
+
+
+           }}
+
+      function xoa(id,_anh,idne) {
+      
+          swal({
+              title: "bạn muốn xóa chứ?",
+              text: "nếu bạn xóa sẽ xóa vĩnh viễn trong cơ sở dũ liệu!",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#e69a2a",
+              confirmButtonText: "Yes, delete it!",
+              closeOnConfirm: false
+          }, function() {
+              $.post("/api/cauhoi/remove/" + id,{anh:_anh}, function(data, status) {
+                 $("#"+idne ).remove();
+                  swal({
+                      title: "đã xóa 1!",
+                      type: "success",
+                      text: data.meta_title,
+                      confirmButtonColor: "#469408",
+                      timer: 700
+                  });
+                  row.delete();
+              });
+          });
+      
+      // document.getElementById("editor").addEventListener("submit", themcauhoi);
+      
+      }
+      
+      // document.getElementById("themt").addEventListener("click",themcauhoi);
+      var demne=0;
+          function themcauhoi() {
+            var kiemtra=false;
+           if( $("#cauhoi").val()=="")
+{
+  kiemtra=true;
+                      swal({
+              title: "bạn chưa điền câu hỏi",
+              text: "vui lòng điền đầy đủ thông tin",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#e69a2a",
+              confirmButtonText: "tôi đã hiểu!",
+              closeOnConfirm: true
+          }, function() {
+           
+           });
+
+}else
+
+         if(   $("#noidung").val()=="")
+           {
+  kiemtra=true;
+       
+                      swal({
+              title: "bạn chưa điền nội dung",
+              text: "vui lòng điền đầy đủ thông tin",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#e69a2a",
+              confirmButtonText: "tôi đã hiểu!",
+              closeOnConfirm: true
+          }, function() {
+           
+           });
+}else
+   if(    $(".nghe").val()==null)
+           {
+          kiemtra
+                      swal({
+              title: "bạn chưa chọn nghề",
+              text: "vui lòng điền đầy đủ thông tin",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#e69a2a",
+              confirmButtonText: "tôi đã hiểu!",
+              closeOnConfirm: true
+          }, function() {
+           
+           });
+}
+else
+   if(  $("#file").val()=="")
+           {
+            kiemtra
+                      swal({
+              title: "bạn chưa thêm hình ảnh",
+              text: "vui lòng điền đầy đủ thông tin",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#e69a2a",
+              confirmButtonText: "tôi đã hiểu!",
+              closeOnConfirm: true
+          }, function() {
+           
+           });
+}
+
+
+                      if(kiemtra){
+                  }else{
+      demne++;
+              var fileInput = document.getElementById('file');
+      
+              var file = fileInput.files[0];
+              // fd dung de luu gia tri goi len
+              var fd = new FormData();
+              fd.append('file', file);
+      
+      
+           function getFormData(fromne) {
+               var unindexed_array = $(fromne).serializeArray();
+               var indexed_array = {};
+
+               var listdiemnghe=[];
+
+
+
+   for (var i = 0; i < $("#pre-selected-options").val().length; i++) {
+            // alert("DFAsdf"+$("#pre-selected-options").val()[i]);
+listdiemnghe[i]={value:""+$("#id"+$("#pre-selected-options").val()[i]).val()};
+             
+             }
+
+         var thuthoi={diemnghe:listdiemnghe};
+             console.log("nghe"+listdiemnghe);
+
+  fd.append("diemnghe",JSON.stringify(listdiemnghe ));
+
+               $.map(unindexed_array, function(n, i) {
+             if(n['name']=="anh" && n['value']==""){
+   
+}
+else 
+
+                 fd.append(n['name'], n['value']);
+               });
+
+               return indexed_array;
+             }
+              var tam = getFormData("#editor");
+              console.log(tam);
+      
+              // fd.append("datainsert",JSong.stringify(tam));
+      
+              // xhr dung de goi data bang ajax
+              var xhr = new XMLHttpRequest();
+              xhr.open('POST', '/api/cauhoi', true);
+              xhr.upload.onprogress = function(e) {
+                  if (e.lengthComputable) {
+      
+                  }
+              };
+              xhr.onload = function() {
+                  if (this.status == 200) {
+                       $('#over, .login').fadeOut(300, function() {
+                  $('#over').remove();
+              });
+      
+      
+      var dataval = JSON.parse(this.response);
+                      dataval.id = dataval._id;
+                      console.log(dataval.id);
+      
+                        $("#danhsach").append('<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6" id="cauhoithem'+demne+'"><div class="panel panel-default card-view pa-0"><div class="panel-wrapper collapse in"><div class="panel-body pa-0"><article class="col-item"><div class="photo"><div class="options"><a onclick="sua(\''+dataval._id+'\',\''+'cauhoithem'+demne+'\')" class="font-18 txt-grey mr-10 pull-left"><i class="zmdi zmdi-edit"></i></a><a onclick="xoa(\''+dataval._id+'\',\''+dataval.anh+'\',\'cauhoithem'+demne+'\');" class="font-18 txt-grey pull-left sa-warning"><i class="zmdi zmdi-close"></i></a></div> <a href="javascript:void(0);"> <img src="'+dataval.anh+'" class="img-responsive" alt="Product Image" /> </a></div><div class="info"> <p> 1 </p><h6>'+dataval.cauhoi+'</h6>  <div class="product-rating inline-block"> <a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star mr-0"></a><a href="javascript:void(0);" class="font-12 txt-success zmdi zmdi-star-outline mr-0"></a></div><span class="head-font block text-warning font-16">  '+dataval.noidung+'Đồng</span></div></article></div> </div></div> </div>');
+      
+                      swal({
+                          title: "thêm mới hoàn thành!",
+                          type: "success",
+                          text: this.response,
+                          confirmButtonColor: "#469408",
+                          timer: 1000
+                      });
+                      console.log("xem " + this.response);
+      
+                      // data.id =this.response._id;
+                 
+      
+      
+                  };
+              };
+              xhr.send(fd);
+      
+      
+      }
+          }
+          function xemnao(){
+            for (var i = 0; i < listidnghe.length; i++) {
+           $("#"+listidnghe[i]).hide();     
+            }
+         
+if($("#pre-selected-options").val()!=null)
+            for (var i = 0; i < $("#pre-selected-options").val().length; i++) {
+            // alert("DFAsdf"+$("#pre-selected-options").val()[i]);
+
+            $("#"+$("#pre-selected-options").val()[i]).show();
+             
+             }
+               }
+   </script>
+</body>
+</html>

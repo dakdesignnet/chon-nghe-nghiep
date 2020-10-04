@@ -1,0 +1,363 @@
+
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:700);
+/* Defaults */
+html, body, #quizzie {
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color:  #fff;
+  background: #2d6900;
+}
+
+h1 {
+ font-family: 'Comfortaa', cursive;
+  font-size: 2.5em;
+}
+
+h2, p {
+  font-family: 'Comfortaa', cursive;
+  font-size: 2em;
+}
+
+h1, h2, p {
+  text-align: center;
+  display: block;
+  width: auto;
+  margin: 1%;
+}
+
+#quizzie {
+  /*padding: 5% 0;*/
+  /* Individual Steps/Sections */
+  /* Content */
+}
+#quizzie ul {
+  list-style: none;
+  display: block;
+  width: auto;
+  margin: 0.2% 2%;
+  padding: 1%;
+  overflow: auto;
+  display: none;
+  /* Step Questions and Answer Options */
+}
+#quizzie ul.current {
+  display: block;
+}
+#quizzie ul li {
+  display: inline-block;
+  float: left;
+  width: 49%;
+  margin-right: 2%;
+  overflow: auto;
+  text-align: center;
+}
+#quizzie ul li.quiz-answer {
+  cursor: pointer;
+}
+#quizzie ul li.question, #quizzie ul li.results-inner {
+  display: block;
+  float: none;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 2%;
+}
+#quizzie ul li.results-inner {
+  padding: 2% 2%;
+}
+#quizzie #contentne h2 img{
+	width: auto;
+    	height: 300px;
+}
+#quizzie ul li.results-inner img {
+  width: 250px;
+}
+#quizzie ul li:last-child {
+  margin-right: 0;
+}
+#quizzie .question-wrap, #quizzie .answer-wrap {
+  display: block;
+  padding: 1%;
+  margin: 1em 10%;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.answer-wrap {
+  background: #7aae5b;
+  -moz-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+    /*color: #e5d272;*/
+  /*background: #f6f7c5;*/
+  border: none;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+/*#quizzie .answer-wrap:hover {
+  background: DarkTurquoise;
+}
+
+*/
+.notehuy{
+ padding: 0.1em 30px;
+  text-align: center;
+    font-family: 'Baloo Tamma', cursive;
+  /*font-family: 'Poiret One', sans-serif;*/
+  text-transform: uppercase;
+  color: #d0f9c7;
+  font-size: 17px;
+}
+
+/*#quizzie .answer-wrap{
+  color: #78c98d;
+  background: #d0f9c7;
+  border: none;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}*/
+.answer-wrap:hover {
+  background: transparent;
+  color: #d0f9c7;
+    border-radius: 60%;
+     /*box-shadow: inset 0 0 0 11em #b657e5;*/
+     border: 1px solid #fff;
+}
+.answer-wrap:hover:before,
+#quizzie .quiz-answer .answer-wrap:hover:after {
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  width: 100%;
+}
+ .answer-wrap:before,
+.answer-wrap:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 0px;
+  height: 3px;
+  background: #d0f9c7;
+  transition: all 0.4s ease;
+}
+.answer-wrap:after {
+  top: inherit;
+  left: inherit;
+  bottom: 0;
+  right: 0;
+}
+
+
+
+ .answer-wrap :active {
+  -webkit-transform: translate(5px, 5px);
+  transform: translate(16px, 5px);
+}
+
+/*huy*/
+
+
+/*@import url(http://fonts.googleapis.com/css?family=Poiret+One|PT+Sans+Narrow:400,700);*/
+
+/* HEADLINE STRUCTURE */
+.headline {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+
+.lines {
+  display: inline-block;
+  position: absolute;
+  top: 20%;
+}
+.lines svg {
+  width: 200px;
+  height: 32px;
+}
+@media screen and (max-width: 650px) {
+  .lines svg {
+    width: 90px;
+    height: 15px;
+  }
+}
+
+.text {
+  display: inline-block;
+  padding: 0.1em 30px;
+  text-align: center;
+
+font-family: 'Comfortaa', cursive;
+  /*font-family: 'Poiret One', sans-serif;*/
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 3px;
+  line-height: 1.2em;
+  color: rgb(0, 138, 255);
+}
+@media screen and (max-width: 650px) {
+  .text {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+
+.left {
+  float: right;
+  margin-left: -220px;
+}
+
+.right {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  float: left;
+  margin-left: -10px;
+}
+
+/* ANIMATION */
+#headline {
+  -webkit-transform: translate(115px, 0px) scalex(1);
+  -moz-transform: translate(115px, 0px) scalex(1);
+  -ms-transform: translate(115px, 0px) scalex(1);
+  -o-transform: translate(115px, 0px) scalex(1);
+  transform: translate(115px, 0px) scalex(1);
+  /* @include transform-origin(right); */
+}
+
+.pulse #headline {
+  -webkit-animation: grow 2s infinite;
+  -moz-animation: grow 2s infinite;
+  animation: grow 2s infinite;
+}
+
+@keyframes grow {
+  0% {
+    -webkit-transform: translate(115px, 0px) scalex(1);
+    -moz-transform: translate(115px, 0px) scalex(1);
+    -ms-transform: translate(115px, 0px) scalex(1);
+    -o-transform: translate(115px, 0px) scalex(1);
+    transform: translate(115px, 0px) scalex(1);
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -ms-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
+  }
+  30% {
+    -webkit-transform: translate(115px, 0px) scalex(2);
+    -moz-transform: translate(8px, 0px) scalex(2);
+    -o-transform: translate(0px, 0px) scalex(2);
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -ms-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
+  }
+}
+@-webkit-keyframes grow {
+  0% {
+    -webkit-transform: translate(115px, 0px) scalex(1);
+    -moz-transform: translate(115px, 0px) scalex(1);
+    -ms-transform: translate(115px, 0px) scalex(1);
+    -o-transform: translate(115px, 0px) scalex(1);
+    transform: translate(115px, 0px) scalex(1);
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -ms-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
+  }
+  30% {
+    -webkit-transform: translate(115px, 0px) scalex(2);
+    -moz-transform: translate(0px, 0px) scalex(2);
+    -o-transform: translate(0px, 0px) scalex(2);
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -ms-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
+  }
+}
+
+
+
+
+
+/*casi nuwax animation radiobutton*/
+
+.stars-container .fa.fa-star {
+font-size: 25px;  
+  color: #ccc;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  left: 4px;
+  top: 1px;
+  z-index: 5;
+}
+.stars-container input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 6;
+  height: 26px;
+  width: 26px;
+}
+.stars-container .fa.fa-star.selected-star {
+  color: #1a6ce7;
+}
+
+
+/*form {
+  height: 45px;
+  border: 0;
+
+  /*background: #222;*/
+/*  width: 5em;
+  border-radius: 1px;
+*/  /*margin: 0.05em auto;*/
+/*}*/
+.bao{
+  height: 602px; 
+  margin:0.5px;
+}
+
+#log {
+  margin: 1em auto;
+  width: 5em;
+  text-align: center;
+  background: transparent;
+}
+#sum,.notehuy{
+ font-family: 'Comfortaa', cursive;
+
+}
+.bangdulieu tr{
+  /*padding:-30px;*/
+border-radius: 6px; box-shadow: 0 2px 2px rgba(62, 9, 11, 0.3);
+line-height: 18px;
+font-size: 0.8em;
+margin: 1px;
+ font-family: 'Comfortaa', cursive;
+}
+
+
+/*float button*/
+
+.txt22{
+  line-height:40px;
+  text-align: center;
+}

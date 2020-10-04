@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <title>Chọn nghề theo cách của bạn</title>
+      <meta name="description" content="ứng dụng chọn nghề theo cách của bạn" />
+      <meta name="keywords" content="ứng dụng chọn nghề, ứng dụng chọn nghề nghiệp phù hợp, ứng dụng chọn nghề tương lai" />
+      <meta name="author" content="phamhoanghuy2"/>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+      <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+      <link href="/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+      <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>  
+      <!-- Custom CSS -->
+      <link href="/dist/css/stylechonnghe.css" rel="stylesheet" type="text/css">
+      <script src='/dist/js/jquery.min.js'></script>
+   </head>
+   <body>
+     <div class="wsmenucontainer">
+
+    <% include partials/menu %> 
+  <div class="wrapper">
+
+      <div id="quizzie">
+         <svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" height="0">
+            <defs>
+               <g id="line">
+                  <line id="svg_1" y2="15.666668" x2="99.666662" y1="15.666668" x1="0.999995" stroke-width="2" stroke="rgb(0, 138, 255)" fill="none" />
+                  <line stroke="rgb(0, 138, 255)" id="svg_4" y2="1" x2="8.989895" y1="1" x1="99.666661" stroke-width="2" fill="none" />
+                  <line id="svg_5" stroke="rgb(0, 138, 255)" y2="31.166662" x2="7.832443" y1="31.166662" x1="100.109209" stroke-width="2" fill="none" />
+               </g>
+            </defs>
+         </svg>
+         <h2 class="headline pulse" style="margin-top: 20px;">
+            <div class="lines">
+               <svg class="left" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+                  <g id="headline">
+                     <use xlink:href="#line" />
+                  </g>
+               </svg>
+            </div>
+            <span class="text">công việc giao tiếp hay xã hội</span>
+            <div class="lines">
+               <svg class="right" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+                  <g id="headline">
+                     <use xlink:href="#line" />
+                  </g>
+               </svg>
+            </div>
+         </h2>
+         <div id="contentne">
+         <h2 id="tieude" style="font-size: 1.3em">Bạn có thích quản lý hoạt động xí nghiệp không?</h2>
+          <ul class="quiz-step step1 current" id="andi" style="padding: 1px;" >
+            <div class="lquestion">
+               <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                  <div class="answer-wrap " style="width: 360px;margin: 0 auto; font-size: 0.9em"  onclick="tiep(2);">
+                     <p class="answer-text" >Không thích hợp lắm</p>
+                   
+                  </div>
+               </li>
+            </div>
+         </ul>
+     <ul class="quiz-step step1 current" id="andi"  style="padding: 1px;">
+            <div class="lquestion">
+               <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                  <div class="answer-wrap " style="width: 360px;margin: 0 auto; font-size: 0.9em"  onclick="tiep(1);">
+                     <p class="answer-text" >Hơi không thích</p>
+                      
+                  </div>
+               </li>
+            </div>
+         </ul>
+           <ul class="quiz-step step1 current" id="andi" style="padding: 1px;" >
+            <div class="lquestion">
+               <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                  <div class="answer-wrap " style="width: 360px;margin: 0 auto; font-size: 0.9em"  onclick="tiep(0);">
+                     <p class="answer-text" >Không thành vấn đề </p>
+                     
+                  </div>
+               </li>
+            </div>
+         </ul>
+           <ul class="quiz-step step1 current" id="andi"  style="padding: 1px; ">
+            <div class="lquestion">
+               <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                  <div class="answer-wrap " style="width: 360px;margin: 0 auto; font-size: 0.9em"  onclick="tiep(-1);">
+                     <p class="answer-text" >Thích một chút</p>
+                     
+                  </div>
+               </li>
+            </div>
+         </ul>
+           <ul class="quiz-step step1 current" id="andi" style="padding: 1px;">
+            <div class="lquestion">
+               <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                  <div class="answer-wrap " style="width: 360px;margin: 0 auto; font-size: 0.9em"  onclick="tiep(-2);">
+                     <p class="answer-text" >Rất thích</p>
+                  
+                  </div>
+               </li>
+            </div>
+         </ul>
+         </div>
+         <ul class="quiz-step step1 current" id="andi" style="padding: 1px;" >
+            <div class="lquestion">
+               <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                  <p class="notehuy">Điểm :</p>
+                
+               </li>
+            </div>
+         </ul>
+         <ul id="results" >
+            <li class="results-inner">
+               <h1>Kết quả của bạn</h1>
+               <h2 id="titleresults"></h2>
+               <p id="noteresults"></p>
+               <p style="color:#d0f9c7; " id="nghanhresults"></p>
+            </li>
+            <li style="width: 100%;" >
+               <div class="answer-wrap" >
+                  <a href="/">
+                     <p class="answer-text">thử lại</p>
+                  </a>
+               </div>
+            </li>
+         </ul>
+      </div>
+</div>
+</div>
+      <script>
+       swal({   
+                 title: "hướng dẫn!",   
+                 text: "hãy đánh giá chính bản thân mình với \n các mức độ phù hợp      \n"
+                 +"Không thích hợp lắm  \n"+
+                 "Hơi không thích\n"+
+                 "Không thành vấn đề\n"+
+                 "Thích một chútn",   
+                 type: "warning",   
+                 showCancelButton: true,   
+                 confirmButtonColor: "#e69a2a",   
+                 confirmButtonText: "tôi đã hiểu!",   
+                 closeOnConfirm: true 
+             }, function(){  })
+        
+           var kt=true;
+         
+         var dangovitri=1;
+         var listtieude=[" Bạn có thích quản lý hoạt động xí nghiệp không?","Bạn có thích tham gia hoạt động liên hoan, hội nghị không?","Bạn có thích lãnh đạo các hoạt động xúc tiến tiêu thụ không?","   Bạn có thích điều tiết việc tranh chấp không?","Bạn có thích làm giám đốc tiêu thụ không?","Bạn có thích làm tuyên truyền vị lợi ích chung không?","Bạn có thích làm cố vấn kinh doanh xí nghiệp không?","Bạn có thích làm thầy giáo không ?","Bạn có thích làm nhà đầu tư không?","Bạn có thích làm làm chuyên gia tư vấn nghề nghiệp không?","Bạn có thích làm quản lý thị trường không?","Bạn có thích là người an ủi người khác không?"];
+         
+        
+         var listtketqua=[{title:"Bạn thuộc khuynh hướng kinh doanh",note:"Người thuộc loại hình này luôn luôn có tài năng lãnh đạo và tài nói chuyện rất tốt, cảm thấy hứng thú đối với tiền bạc và quyền lực,. Họ yêu mến giao tiếp, mạo hiểm,  hòa nhã dễ gần gũi, tinh tế, hoài bão lớn lao",nghanh:"thích công việc như là tiếp thị, phục vụ, loại hình quản lý..."},{title:"Bạn thuộc khuynh hướng giao tiếp xã hội",note:"loại người này thông thường thích xung quanh có người khác tồn tại, có hứng thú đối với việc của người khác, vui vẻ  giúp đỡ người khác giải quyết những vấn đề khó . Loại người này thích giao tiếp với người mà không phải giao tiếp với công việc. Họ giúp người khác vui vẻ, có trách nhiệm, nhiệt tình, giỏi về hợp tác, lý tưởng phong phú, hữu hảo, lương thiện, khẳng khái, kiên nhẫn",nghanh:"thích công việc có tính giao tiếp xã hội, như giáo viên, cố vấn tư vấn, y tá…"}];
+         var tongkq=0;
+     
+      
+       
+         
+         function tiep(diemne){
+         
+         tongkq+=diemne;
+        
+         
+         if(dangovitri==listtieude.length){
+         
+         // alert(listsum[0]+"fasdfs"+listsum[1]+"dfasdfsd"+listsum[2])
+         
+     var kqcuoi=0;
+        if(tongkq<0){
+         kqcuoi=1;
+       }
+         else{
+         kqcuoi=0;
+          
+         }
+           swal({   
+                 title: "bạn là :"+listtketqua[kqcuoi].title,   
+                 text: listtketqua[kqcuoi].nghanh,   
+                 type: "success",   
+                 showCancelButton: true,   
+                 confirmButtonColor: "#e69a2a",   
+                 confirmButtonText: "đã rõ!",   
+                 closeOnConfirm: true 
+             }, function(){ 
+              
+         
+              })
+         $("#andi").hide();
+         $("#tieude").hide();
+         $("#notehuy").hide();
+            $("#contentne").hide();
+         $("#bang1").hide();
+              $("#tieude").html("Hoàn tất");     
+         $("#results").show("flow");
+           $(".notehuy").html( listtieude.length+"/"+listtieude.length+" Điểm: "+   tongkq);
+         // $("#contentne").show("flow");
+
+
+                 $("#titleresults").html(listtketqua[kqcuoi].title);
+         $("#noteresults").html(listtketqua[kqcuoi].note);
+         $("#nghanhresults").html(listtketqua[kqcuoi].nghanh);
+         }else{
+         $("#tieude").html(listtieude[dangovitri]);
+       
+            $("#contentne").hide();
+         $("#contentne").show("flow");
+           $(".notehuy").html( dangovitri+"/"+listtieude.length+" Điểm: "+   tongkq);
+           if(dangovitri==listtieude.length-1)
+           $(".notehuy").html( dangovitri+"/"+listtieude.length+" Điểm: "+   tongkq+"\n còn 1 câu để Hoàn tất");
+        
+         dangovitri++;
+         
+         }
+         
+         }
+      </script>
+   </body>
+</html>-

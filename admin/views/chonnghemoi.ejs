@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <title>Chọn nghề theo cách của bạn</title>
+      <meta name="description" content="ứng dụng chọn nghề theo cách của bạn" />
+      <meta name="keywords" content="ứng dụng chọn nghề, ứng dụng chọn nghề nghiệp phù hợp, ứng dụng chọn nghề tương lai" />
+      <meta name="author" content="Hoang Lai Van"/>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+      <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+      <link href="/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+      <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>  
+      <!-- Footable CSS -->
+      <link href="/vendors/bower_components/FooTable/compiled/footable.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+      <!-- Custom CSS -->
+      <link href="/dist/css/stylechonnghe.css" rel="stylesheet" type="text/css">
+      <script src='/dist/js/jquery.min.js'></script>
+   </head>
+   <body>
+      <div class="wsmenucontainer">
+         <% include partials/menu %> 
+         <div class="wrapper">
+            <div id="quizzie">
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" height="0">
+                  <defs>
+                     <g id="line">
+                        <line id="svg_1" y2="15.666668" x2="99.666662" y1="15.666668" x1="0.999995" stroke-width="2" stroke="rgb(0, 138, 255)" fill="none" />
+                        <line stroke="rgb(0, 138, 255)" id="svg_4" y2="1" x2="8.989895" y1="1" x1="99.666661" stroke-width="2" fill="none" />
+                        <line id="svg_5" stroke="rgb(0, 138, 255)" y2="31.166662" x2="7.832443" y1="31.166662" x1="100.109209" stroke-width="2" fill="none" />
+                     </g>
+                  </defs>
+               </svg>
+               <h2 class="headline pulse" style="margin-top: 20px;">
+                  <div class="lines">
+                     <svg class="left" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+                        <g id="headline">
+                           <use xlink:href="#line" />
+                        </g>
+                     </svg>
+                  </div>
+                  <span class="text">Trắc nghiệm chọn nghề</span>
+                  <div class="lines">
+                     <svg class="right" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+                        <g id="headline">
+                           <use xlink:href="#line" />
+                        </g>
+                     </svg>
+                  </div>
+               </h2>
+               <div id="contentne">
+                  <h2 id="tieude" style="font-size: 1.6em"> <%=listcauhoi[0].cauhoi%> </h2>
+                  <h2 id="noidungcauhoi" style="font-size: 1.2em; color: rgb(0, 138, 255);"> <%=listcauhoi[0].noidung%> </h2>
+                  <div style="margin: auto;width:100%; width: 600PX;height: auto;min-height: 140px;" >
+                     <h2> <img style="margin: 0 auto; width: 100
+                        %" src="<%=listcauhoi[0].anh%>" id="anh"></h2>
+                  </div>
+                  <ul class="quiz-step step1 current" id="andi" style="padding: 1px;" >
+                     <div class="lquestion">
+                        <li class="quiz-answer low-value question" data-quizIndex="2" style="float:left;width:51.5%;margin-left:30px;margin-bottom: 0px;padding-bottom: 0px;">
+                           <div class="answer-wrap " style="width: 480px;margin: 0 auto; font-size: 0.9em"  onclick="tiep(0);">
+                              <p class="answer-text" id="da0" > không</p>
+                           </div>
+                        </li>
+                        <li class="quiz-answer low-value question" data-quizIndex="2" style="float:left;width:45%;margin-left:-65px;margin-bottom: 0px;padding-bottom: 0px;">
+                           <div class="answer-wrap " style="width: 480px;margin: 0 auto; font-size: 0.9em"  onclick="tiep(1);">
+                              <p class="answer-text" id="da1" >có   </p>
+                           </div>
+                        </li>
+                        </li>
+                     </div>
+                  </ul>
+                  <!--<ul class="quiz-step step1 current" id="andi"  style="padding: 1px;">
+                     <div class="lquestion">
+                        <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                           
+                        </li>
+                     </div>
+                     </ul>-->
+               </div>
+               <ul class="quiz-step step1 current" id="andi" style="padding: 1px;" >
+                  <div class="lquestion">
+                     <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                        <p class="notehuy">1</p>
+                     </li>
+                  </div>
+               </ul>
+               <ul id="results" >
+                  <li class="results-inner">
+                     <h3>Dựa theo thông tin bạn đã cung cấp</h3>
+                     <h1>Chương trình tư vấn cho bạn như sau:</h1>
+                     <h3>
+                     Bạn nên theo học theo nghề dưới đây là phù hợp với năng lực và kỹ năng của bạn</h1>
+                     <h1 style="font-size: 2.1em;" id="titleresults"></h1>
+                     <p id="noteresults"></p>
+                     <p style="color:#d0f9c7; " id="nghanhresults"></p>
+                     <h3>Hoặc thêm hai nghề phù hợp với năng lực và kỹ năng của bạn</h3>
+                     <h2  style="font-size: 1.5em;"  id="titleresults2"></h2>
+                     <p id="noteresults2"></p>
+                     <h2   style="font-size: 1.1em;"  id="titleresults3"></h2>
+                     <p id="noteresults3"></p>
+                     <div class="results-inner">
+                        <h3 onclick="xemchitiet()">xem thông tin kết quả</h3>
+                        <div id="dsthongtin">
+                           <div class="table-responsive">
+                              <table class="table table-hover mb-0" id="tableindex">
+                                 <thead >
+                                    <tr>
+                                       <th>STT</th>
+                                       <th>tên nghành nghề</th>
+                                       <th>tổng số câu</th>
+                                       <th>tổng điểm của nghề</th>
+                                       <th>điểm của bạn tính</th>
+                                       <th>kết quả</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody id="themxemthem" >
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li style="width: 100%;" >
+                     <div class="answer-wrap" >
+                        <a href="/">
+                           <p class="answer-text">thử lại</p>
+                        </a>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <script>
+         // swal({   
+         //           title: "hướng dẫn!",   
+         //           text: "hãy đánh giá chính bản thân mình với \n các mức độ phù hợp      \n"
+         //           +"Không thích hợp lắm  \n"+
+         //           "Hơi không thích\n"+
+         //           "Không thành vấn đề\n"+
+         //           "Thích một chútn",   
+         //           type: "warning",   
+         //           showCancelButton: true,   
+         //           confirmButtonColor: "#e69a2a",   
+         //           confirmButtonText: "tôi đã hiểu!",   
+         //           closeOnConfirm: true 
+         //       }, function(){  })
+          
+             var kt=true;
+           
+           var dangovitri=0;
+         
+         <% %>var listcauhoi=<%-JSON.stringify(listcauhoi)%>;
+         var listnghe=<%-JSON.stringify(listnghe)%>; <% %>
+         function shuffle(array) {
+         var currentIndex = array.length, temporaryValue, randomIndex;
+         
+         // While there remain elements to shuffle...
+         while (0 !== currentIndex) {
+         
+         // Pick a remaining element...
+         randomIndex = Math.floor(Math.random() * currentIndex);
+         currentIndex -= 1;
+         
+         // And swap it with the current element.
+         temporaryValue = array[currentIndex];
+         array[currentIndex] = array[randomIndex];
+         array[randomIndex] = temporaryValue;
+         }
+         
+         return array;
+         }
+         listcauhoi=shuffle(listcauhoi);
+         
+           var tongkq=0;
+           var listkq=[];
+               var listidnghe=[];
+         for (var i = 0; i < listnghe.length; i++) {
+          listidnghe.push(listnghe[i]._id);
+         listkq.push({id:listnghe[i]._id,ten:listnghe[i].ten,noidung:listnghe[i].noidung,ghichu:listnghe[i].ghichu,diem:0,tongsocauhoi:0,tongdiem:0,diemtinh:0});
+         }
+         // lọc câu hỏi và nghề
+         
+         for (var i = 0; i < listcauhoi.length; i++) {
+         for (var j = 0; j<  listcauhoi[i].nghe.length;j++) {
+         if( listidnghe.indexOf(listcauhoi[i].nghe[j].id)>-1){
+          listkq[listidnghe.indexOf(listcauhoi[i].nghe[j].id)].tongdiem+=parseInt(listcauhoi[i].nghe[j].value);
+                 listkq[listidnghe.indexOf(listcauhoi[i].nghe[j].id)].tongsocauhoi+=1;
+          }
+         }
+         }
+         console.log("giá tị câu hỏi"+ JSON.stringify(listkq));
+           
+              $("#tieude").html(listcauhoi[0].cauhoi);
+         
+         $("#noidungcauhoi").html(listcauhoi[0].noidung);
+         
+         $("#anh").attr("src", listcauhoi[0].anh);
+         
+         
+         var nholan2=0;
+         
+           function tiep(diemne){
+            var listnhotam=[];
+            if(diemne==1)
+            {
+           for (var i = 0; i < listcauhoi[dangovitri].nghe.length; i++) {
+         if( listidnghe.indexOf(listcauhoi[dangovitri].nghe[i].id)>-1){
+          listkq[listidnghe.indexOf(listcauhoi[dangovitri].nghe[i].id)].diem+=parseInt(listcauhoi[dangovitri].nghe[i].value);
+          }
+           }
+           var bientamthoi=0;
+           for (var i = 0; i < listkq.length; i++) {
+            if(listkq[i].diem==listkq[i].tongdiem && listkq[i].diem!=0){
+         console.log("điểm là"+listkq[i].diem+"/"+listkq[i].tongdiem)  ;
+         listnhotam.push(listkq[i]);
+         bientamthoi++;
+            }
+           }
+         if(bientamthoi>0&& bientamthoi!=nholan2){   
+         
+         listnhotam.sort(function(a, b){return b.diem - a.diem});
+         nholan2=bientamthoi;
+         var noidunghienthi="";
+         if(bientamthoi==1){
+         noidunghienthi="Chương trình thấy bạn có một nghề phù hợp là \n"+listnhotam[0].ten+ " với số điểm: "+listnhotam[0].diem+"("+listnhotam[0].tongdiem+"điểm /"+listnhotam[0].tongsocauhoi+" câu hỏi)";
+         }else
+         if(bientamthoi==2){
+         noidunghienthi="Chương trình thấy bạn có hai nghề phù hợp là  :\n nghề thứ nhất là "+listnhotam[0].ten+" với số điểm "+listnhotam[0].diem+"("+listnhotam[0].tongdiem+" điểm/"+listnhotam[0].tongsocauhoi+"câu hỏi) \n nghề thứ hai là "+listnhotam[1].ten+" với số điểm "+listnhotam[1].diem+"("+listnhotam[1].tongdiem+"/"+listnhotam[1].tongsocauhoi;
+         }else{
+         noidunghienthi="Chương trình thấy bạn có "+bientamthoi+" nghề phù hợp là : \n";
+         for (var i = 0; i < bientamthoi; i++) {
+         noidunghienthi+=""+listnhotam[i].ten+" với số điểm "+listnhotam[i].diem+"("+listnhotam[i].tongdiem+"điểm /"+listnhotam[i].tongsocauhoi+" câu hỏi)\n";
+         }
+         
+         }
+             swal({   
+                   title: "bạn đã có :" +bientamthoi+" kết quả ",   
+                   text:noidunghienthi,   
+                   type: "success",   
+                   showCancelButton: true,   
+                   confirmButtonColor: "#e69a2a",   
+                   confirmButtonText: "đã rõ!",   
+                   closeOnConfirm: true 
+               }, function(){ 
+                
+           
+                })
+         }
+         
+            }
+           
+           if(dangovitri==listcauhoi.length-1){
+           
+           // alert(listsum[0]+"fasdfs"+listsum[1]+"dfasdfsd"+listsum[2])
+           
+         var kqcuoi=0;
+         var tamne=0;
+         for (var i = 0; i < listkq.length; i++) {
+         listkq[i].diemtinh=(listkq[i].diem/listkq[i].tongdiem*10);
+         listkq[i].diemtinh=listkq[i].diemtinh.toFixed(1);
+         }
+         
+         // lọc kết quả 
+         listkq.sort(function(a, b){
+         // nếu có 2 nghề bằng điểm thì xếp hạng bằng số câu hỏi
+         if(b.diemtinh ==a.diemtinh ){
+         return  b.tongsocauhoi - a.tongsocauhoi;
+         }
+         else
+         
+         return b.diemtinh - a.diemtinh});
+         // thông báo kết quả
+             swal({   
+                   title: "bạn là :"+listkq[0].ten,   
+                   text: listkq[0].noidung,   
+                   type: "success",   
+                   showCancelButton: true,   
+                   confirmButtonColor: "#e69a2a",   
+                   confirmButtonText: "đã rõ!",   
+                   closeOnConfirm: true 
+               }, function(){ 
+                
+           
+                })
+           $("#andi").hide();
+           $("#tieude").hide();
+           $("#notehuy").hide();
+              $("#contentne").hide();
+           $("#bang1").hide();
+                $("#tieude").html("Hoàn tất");     
+           $("#results").show("flow");
+             $(".notehuy").html( listcauhoi.length+"/"+listcauhoi.length );
+           // $("#contentne").show("flow");
+         var ngheneeee=[];
+         var diemmmmmm=[];
+         
+         for (var i = 0; i < listkq.length; i++) {
+         ngheneeee.push(listkq[i].ten);
+         diemmmmmm.push(listkq[i].diem);
+         }
+         // gửi dữ liệu lên server
+         $.post("/api/history/", {nghe:JSON.stringify({listkq})},function(data,status){
+         
+         console.log("Đã gửi kết quả"+data)
+          }); 
+         
+         $("#dsthongtin").hide();
+         for (var i = 0; i < listkq.length; i++) {
+         
+         $("#themxemthem").append('<tr > <td> <span class="txt-dark weight-500">'+i+'</span></a></span></td> <td> <span class="txt-dark weight-500">'
+         +listkq[i].ten+'</span></a></td>  <td> <span class="txt-dark weight-500">'+listkq[i].tongsocauhoi+'</span></a></td>'+
+         '<td> <span class="txt-dark weight-500">'+listkq[i].tongdiem+'</span></a></td>'+'<td> <span class="txt-dark weight-500">'+listkq[i].diem+'</span></a></td>'+'<td> <span class="txt-dark weight-500">'+listkq[i].diemtinh+'</span></a></td>'+' </tr>')
+         }
+                   $("#titleresults").html(listkq[0].ten);
+           $("#noteresults").html(listkq[0].noidung);
+                   $("#titleresults2").html(listkq[1].ten);
+           $("#noteresults2").html(listkq[1].noidung);
+                   $("#titleresults3").html(listkq[2].ten);
+           $("#noteresults3").html(listkq[2].noidung);
+           }else{
+           $("#tieude").html(listcauhoi[dangovitri].cauhoi);
+         
+         $("#noidungcauhoi").html(listcauhoi[dangovitri].noidung);
+         // $("#da0").html(listcauhoi[dangovitri].dapan[0]);
+         // $("#da1").html(listcauhoi[dangovitri].dapan[1]);
+         // $("#da2").html(listcauhoi[dangovitri].dapan[2]);
+         // $("#da3").html(listcauhoi[dangovitri].dapan[3]);
+         $("#anh").attr("src", listcauhoi[dangovitri].anh);
+              $("#contentne").hide();
+           $("#contentne").show("flow");
+             $(".notehuy").html(( dangovitri+1)+"/"+listcauhoi.length);
+             if(dangovitri==listcauhoi.length-1)
+             $(".notehuy").html( (dangovitri+1)+"/"+(listcauhoi.length)+"\n còn 1 câu để Hoàn tất");
+          
+           dangovitri++;
+           
+           }
+           
+           }
+         
+               swal({   
+                   title: "trắc nghiệm chọn nghề",   
+                   text: "trả lời những câu hỏi để biết bạn phù hợp với nghề gì",   
+                   type: "success",   
+                   showCancelButton: true,   
+                   confirmButtonColor: "#e69a2a",   
+                   confirmButtonText: "đã rõ!",   
+                   closeOnConfirm: true 
+               }, function(){ 
+                
+           
+                })
+               function xemchitiet(){
+                $("#dsthongtin").show("flow");
+         
+               }
+      </script>
+   </body>
+</html>

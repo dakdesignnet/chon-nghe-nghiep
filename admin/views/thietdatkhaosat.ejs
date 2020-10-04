@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>danh sách mục khảo sát</title>
+		<meta name="description" content="Doodle is a Dashboard & Admin Site Responsive Template by hencework." />
+		<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Doodle Admin, Doodleadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
+		<meta name="author" content="hencework"/>
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<!-- vector map CSS -->
+		<link href="/vendors/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" type="text/css"/>
+		<link href="/vendors/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet" type="text/css">
+		<!-- Bootstrap Switches CSS -->
+	
+		<!-- Footable CSS -->
+	
+		<link href="/vendors/bower_components/FooTable/compiled/footable.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<!-- Custom CSS -->
+			<link href="/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+		<link href="/dist/css/style.css" rel="stylesheet" type="text/css">
+		<!-- Custom CSS -->
+
+
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+	<!--Preloader-->
+
+		<% include partials/head %>			
+				
+			<!-- Main Content -->
+			<div class="page-wrapper">
+				<div class="container-fluid">
+					<!-- Title -->
+					<div class="row heading-bg">
+						<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+						  <h5 class="txt-dark">thiết đặt khảo sát</h5>
+						</div>
+						<!-- Breadcrumb -->
+						<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+						  <ol class="breadcrumb">
+							<li><a href="/index.html">Dashboard</a></li>
+							<li><a href="/#"><span>table</span></a></li>
+							<li class="active"><span>thiết đặt khảo sát</span></li>
+						  </ol>
+						</div>
+						<!-- /Breadcrumb -->
+					</div>
+					<!-- /Title -->
+					
+				
+					<!-- Row -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">thêm các thành phần trong khảo sát</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+					<div class="form-group">
+					<div class="row">
+					<div class="col-sm-12">
+															<label class="control-label mb-6">lựa chọn khảo sát</label>
+														<select class="selectgroup"  onchange="thaydoikhaosat()" id="selectgroup" data-style="form-control btn-default btn-outline">
+                                                                     
+                                                                             
+																  <% 
+																if(listquestiongroup!=null)  listquestiongroup.forEach((questiongroup) =>  {
+																 { 
+																  if(questiongroup._id==group){%>
+
+													<option value="<%=questiongroup._id%>" selected><%=questiongroup.name%></option>
+															
+												 <% }else
+															{%>
+													<option value="<%=questiongroup._id%>"><%=questiongroup.name%></option>
+												 <%}
+												 }}) %>
+
+
+
+															
+															</select>
+															<%if( listquestion!=null)
+															if( listquestion[0]==null){
+															%><div><button  id="macdinh"  class="btn btn-primary" style="margin-top:10px;" >thiết đặt mặc định</button></div>
+															<%}%>
+															</div>
+															</div>
+
+														</div>	
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="table-wrap">
+											<table id="footable_2" class="table" data-paging="true" data-filtering="true" data-sorting="true">
+												<thead>
+												<tr>
+													<th  data-breakpoints="xs">STT</th>
+													<th data-name="id" data-breakpoints="xs" data-type="text">ID</th>
+														<th data-name="name" data-breakpoints="xs" data-type="text">tên</th>
+													<th data-name="typequetsion" data-type="text">kiểu dữ liệu</th>
+													<th data-name="note" data-breakpoints="xs">ghi chú</th>
+												
+
+												
+												</tr>
+												</thead>
+												<tbody id="tbodyhuy">
+
+                                                    <%var dem=0;%>
+												  <%
+												  if(listquestion!=null)
+												  if(listquestion.length>0)
+												   listquestion.forEach((question) => {if((group!="" && question.group==group)|| group==""&& question.group==listquestiongroup[0]._id){ %>
+												<tr >
+												<%dem++%>
+											<td><%=dem%></td>
+													<td><%=question._id%></td>
+											
+												<!--  -->
+													<td><%=question.name%></td>
+													<td><%=question.typequetsion%></td>
+													
+													<td><%=question.note%></td>
+											
+												
+												</tr>
+												 <% }}) %>
+												
+												</tbody>
+											</table>
+
+											<!--Editor-->
+											<div class="modal fade " id="editor-modal" tabindex="-1" role="dialog" aria-labelledby="editor-title">
+											
+											<div class="modal-dialog" role="document">
+												<form class="modal-content form-horizontal" id="editor" style="width: 50%; margin: 0 auto;">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+														<h5 class="modal-title" id="editor-title">thêm trường dữ liệu</h5>
+													</div>
+													<div class="modal-body">
+														<input type="text" id="id" name="id" class="hidden"/>
+
+														
+																<input type="text"  id="group" name="group"   class="hidden" >
+															
+
+														<div class="form-group required">
+														
+															<div class="col-sm-12">
+																<label for="typequetsion" class=" control-label">kiểu dữ liệu </label>
+																<select  id="typequetsion" name="typequetsion" onchange="thaykieudulieu()" required>
+																			    <option value="STRING" >chữ</option>
+																			    <option value="SO" >số </option>
+																			     <option value="SOKHONGTRUNG" >số không trùng</option>
+
+																			    <option value="SDT" >số điện thoại</option>
+																			    <option value="SDTKHONGTRUNG" >số điện thoại không trùng</option>
+
+																			    <option value="CMND" >Số chứng minh nhân dân</option>
+																			    <option value="CMNDKHONGTRUNG" >Số chứng minh nhân dân không trùng</option>
+																				<option value="DIACHI" >Địa chỉ</option>
+																			    <!-- <option value="CAUHOI" >Câu hỏi</option> -->
+																			</select>
+															</div>
+														</div>
+														<div class="form-group required">
+														
+															<div class="col-sm-12">
+																<label for="name" class=" control-label">tên trường dữ liệu </label>
+																<input type="text" class="form-control" id="name" name="name" placeholder="tên cột " required>
+															</div>
+														</div>
+														
+														
+															
+																<input type="text"  id="answer" name="answer"  class="hidden" >
+														
+													
+														<div class="form-group required">
+															<div class="col-sm-12">
+															<label for="note" class=" control-label">ghi chú </label>
+
+																<input type="text" class="form-control" id="note" name="note" placeholder="note" >
+															</div>
+														</div>
+														
+															
+													</div>
+													<div class="modal-footer">
+														<button type="submit"  class="btn btn-primary">Lưu thay đổi</button>
+														<button type="button" class="btn btn-default" data-dismiss="modal">bỏ qua</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										<!--/Editor-->
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Row -->
+					
+				
+					
+					<!-- Footer -->
+					<footer class="footer container-fluid pl-30 pr-30">
+						<div class="row">
+							<div class="col-sm-12">
+								<p>2017 &copy; Doodle. Pampered by Hencework</p>
+							</div>
+						</div>
+					</footer>
+					<!-- /Footer -->
+					
+				</div>
+			</div>
+			<!-- /Main Content -->
+		
+		</div>
+		<!-- /#wrapper -->
+		
+		<!-- JavaScript -->
+		<style type="text/css">
+			@media (min-width: 768px){
+
+.modal-dialog {
+    width: 80%;
+    margin: 30px auto;
+}}
+		</style>
+		<!-- jQuery -->
+		<script src="/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+	
+		<!-- Bootstrap Core JavaScript -->
+		<script src="/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Data table JavaScript -->
+		<script src="/vendors/bower_components/moment/min/moment.min.js"></script>
+			<!-- <script src="/dist/js/ajax.jquery.min.js"></script> <--></-->
+		<!-- Sweet-Alert  -->
+
+			<script src="/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+			
+		<script src="/vendors/bower_components/FooTable/compiled/footable.min.js" type="text/javascript"></script>
+		<!-- ở đây thêm mơi -->
+	<!-- 	<script src="/dist/js/listuser.js"></script>
+		 -->
+		<!-- Slimscroll JavaScript -->
+		<script src="/dist/js/jquery.slimscroll.js"></script>
+
+
+		<!-- Tinymce JavaScript -->
+		<script src="/vendors/bower_components/tinymce/tinymce.min.js"></script>
+		<!-- Tinymce Wysuhtml5 Init JavaScript -->
+		<script src="/dist/js/tinymce-data.js"></script>
+		<!-- Fancy Dropdown JS -->
+		<script src="/dist/js/dropdown-bootstrap-extended.js"></script>
+		
+		<!-- Owl JavaScript -->
+		<script src="/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+		<!-- Init JavaScript -->
+		<script src="/dist/js/init.js"></script>
+			<!-- <script src="//dist/js/ajax.jquery.min.js"></script> -->
+		<!--  -->
+<script type="text/javascript">
+function thaydoikhaosat(){
+window.location.href = "/thietdatkhaosat/"+$("#selectgroup").val();
+ // $.get("/api/questionbygroup/"+$("#selectgroup").val(),function(data,status){
+
+
+ //                  swal({   
+	// 		title: "lấy dữ liệu thành công ",   
+ //             type: "success", 
+	// 		text: data.meta_title,
+	// 		confirmButtonColor: "#469408", 
+ //                 timer: 1000  
+ //        });
+ //                  var tamnee="";
+ //              for (var i = 0; i < data.length; i++) {
+       
+ //      tamnee= '<tr><td>'+i+'</td><td>'+data[i]._id+'</td><td>'+data[i].name+'</td><td>'+data[i].typequetsion+'</td><td> '+data[i].answer+'</td><td>'+data[i].note+'</td></tr>';
+ //      // alert(tamnee);
+ //      // tamnene='<h1>fasdfads</h1>';
+ //             $("#tbodyhuy").prepend(tamnee);
+ //      //     tamnee="";
+ //           } 
+
+ //        });
+
+}
+$("#macdinh").click(function() {
+	thietdatmacdinh();
+	});
+function thietdatmacdinh(){
+	console.log("đang chạy nè");
+  var macdinh={name:"Tên khách hàng",group:$("#selectgroup").val(),typequetsion:"STRING",answer:"",note:""};
+ $.post("/api/question",macdinh,function(data,status){
+                  swal({   
+			title: "thêm mới hoàn thành!",   
+             type: "success", 
+			text: data.name,
+			confirmButtonColor: "#469408", 
+                 timer: 1000  
+        });
+                   data.id=data._id;
+        });
+
+var macdinh2={name:"Dịa chỉ",group:$("#selectgroup").val(),typequetsion:"DIACHI",answer:"",note:""};
+ $.post("/api/question",macdinh2,function(data,status){
+                  swal({   
+			title: "thêm mới hoàn thành!",   
+             type: "success", 
+			text: data.name,
+			confirmButtonColor: "#469408", 
+                 timer: 1000  
+        });
+                   data.id=data._id;
+        });
+
+var macdinh3={name:"Địa chỉ cụ thể",group:$("#selectgroup").val(),typequetsion:"STRING",answer:"",note:""}
+ $.post("/api/question",macdinh3,function(data,status){
+                  swal({   
+			title: "thêm mới hoàn thành!",   
+             type: "success", 
+			text: data.name,
+			confirmButtonColor: "#469408", 
+                 timer: 1000  
+        });
+                   data.id=data._id;
+        });
+var macdinh4={name:"Số điện thoại",group:$("#selectgroup").val(),typequetsion:"SDT",answer:"",note:""};
+ $.post("/api/question",macdinh4,function(data,status){
+                  swal({   
+			title: "thêm mới hoàn thành!",   
+             type: "success", 
+			text: data.name,
+			confirmButtonColor: "#469408", 
+                 timer: 1000  
+        });
+                   data.id=data._id;
+                 
+
+        });
+ var macdinh5={name:"Số chứng minh nhân dân",group:$("#selectgroup").val(),typequetsion:"CMNDKHONGTRUNG",answer:"",note:""};
+ $.post("/api/question",macdinh5,function(data,status){
+                  swal({   
+			title: "thêm mới hoàn thành!",   
+             type: "success", 
+			text: data.name,
+			confirmButtonColor: "#469408", 
+                 timer: 1000  
+        });
+                   data.id=data._id;
+                 
+
+        });
+ var macdinh6={name:"ghi chú",group:$("#selectgroup").val(),typequetsion:"STRING",answer:"",note:""};
+ $.post("/api/question",macdinh6,function(data,status){
+                  swal({   
+			title: "thêm mới hoàn thành!",   
+             type: "success", 
+			text: data.name,
+			confirmButtonColor: "#469408", 
+                 timer: 1000  
+        });
+             window.location.href = "/thietdatkhaosat/"+$("#selectgroup").val();    
+
+        });
+
+
+}
+function thaykieudulieu(){
+
+$("#name").val($("#typequetsion option:selected").text());
+}
+	/*FooTable Init*/
+
+$(function () {
+
+	var d = new Date();
+
+var texttam=  d.getDate() + "/" + (parseInt(d.getMonth()) + 1) + "/" + d.getFullYear();
+
+	"use strict";
+	/*Init FooTable*/
+	$('#footable_1,#footable_3').footable();
+	
+	/*Editing FooTable*/
+	
+	var $modal = $('#editor-modal'),
+	$editor = $('#editor'),
+	$editorTitle = $('#editor-title'),
+	ft = FooTable.init('#footable_2', {
+		editing: {
+			enabled: true,
+			addRow: function(){
+				$modal.removeData('row');
+				$editor[0].reset();
+				$editorTitle.text('thêm trường dữ liệu');
+					$editor.find('#group').val($("#selectgroup").val());
+				$modal.modal('show');
+			},
+			
+			editRow: function(row){
+				var values = row.val();
+				$editor.find('#id').val(values.id);
+				$editor.find('#name').val(values.name);
+		$editor.find('#typequetsion').val(values.typequetsion.trim());
+
+				$editor.find('#note').val(values.note);
+				// $editor.find('#password').val(values.password);
+			
+				$modal.data('row', row);
+				$editorTitle.text('Chỉnh sửa trường dữ liệu#' + values.id);
+				$modal.modal('show');
+			},
+			deleteRow: function(row){
+
+				  swal({   
+            title: "bạn muốn xóa chứ?",   
+            text: "nếu bạn xóa sẽ xóa vĩnh viễn trong cơ sở dũ liệu!",   
+            type: "warning",   
+            showCancelButton: true,   
+            confirmButtonColor: "#e69a2a",   
+            confirmButtonText: "Yes, delete it!",   
+            closeOnConfirm: false 
+        }, function(){   
+ $.post("/api/removequestion/"+row.val().id,function(data,status){
+
+                  swal({   
+			title: "đã xóa 1!",   
+             type: "success", 
+			text: data.meta_title,
+			confirmButtonColor: "#469408", 
+                 timer: 700  
+        });
+                  	row.delete();
+        });	
+			 });	
+			}
+		}
+	}),
+	uid = 10;
+
+	$editor.on('submit', function(e){
+		if (this.checkValidity && !this.checkValidity()) return;
+		e.preventDefault();
+		var row = $modal.data('row');
+
+		if($editor.find('#id').val()=='')	{
+		$modal.modal('hide');
+
+ $.post("/api/question",$("#editor").serialize(),function(data,status){
+                  swal({   
+			title: "thêm mới hoàn thành!",   
+             type: "success", 
+			text: data.meta_title,
+			confirmButtonColor: "#469408", 
+                 timer: 1000  
+        });
+                   data.id=data._id;
+                  ft.rows.add(data);
+                 
+
+			console.log("xem "+data.id);
+        });
+
+
+}else{
+	$modal.modal('hide');
+ $.post("/api/updatequestion/"+$editor.find('#id').val(),$("#editor").serialize(),function(data,status){
+
+			if(status=="success"){
+				     swal({   
+						title: "update hoàn thành!",   
+			             type: "success", 
+						text: data.name,
+						confirmButtonColor: "#469408", 
+			                 timer: 1200  
+			        });
+
+						var dataval=data;
+			                dataval.name=  	$editor.find('#name').val();
+						 dataval.note=  	$editor.find('#note').val();
+						
+						 dataval.active=  	$editor.find('#active').val();
+		          	 row.val(dataval);
+
+			}else{
+			 swal({   
+						title: "lỗi!",   
+			             type: "error", 
+						text: data.name,
+						confirmButtonColor: "#469408", 
+			                 timer: 500  
+			        });	
+			}
+             
+        });
+        	$modal.modal('hide');	
+			}
+		
+	
+	});
+});
+		
+</script>
+<!-- ajax -->
+ 															   <% 
+																if(listquestiongroup==null){
+																%><script type="text/javascript">	  swal({   
+											            title: "chưa có chiến dịch khảo sát nào?",   
+											            text: "bạn có muốn thêm mới chiến dịch không!",   
+											            type: "warning",   
+											            showCancelButton: true,   
+											            confirmButtonColor: "#e69a2a",   
+											            confirmButtonText: "tôi đồng ý!",   
+											            closeOnConfirm: false 
+											        }, function(){
+											        		     window.location.href = "/danhsachkhaosat";
+											          })</script><%
+															}%>   
+		
+	</body>
+</html>

@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Chọn nghề theo cách của bạn</title>
+	<meta name="description" content="ứng dụng chọn nghề theo cách của bạn" />
+	<meta name="keywords" content="ứng dụng chọn nghề, ứng dụng chọn nghề nghiệp phù hợp, ứng dụng chọn nghề tương lai" />
+	<meta name="author" content="phamhoanghuy3"/>
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	
+
+		
+	<!-- Custom CSS -->
+	<link href="/dist/css/stylechonnghe.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="wsmenucontainer">
+
+    <% include partials/menu %> 
+  <div class="wrapper">
+
+
+
+<div id="quizzie">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" height="0">
+    <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+    <defs>
+      <g id="line">
+        <line id="svg_1" y2="15.666668" x2="99.666662" y1="15.666668" x1="0.999995" stroke-width="2" stroke="rgb(0, 138, 255)" fill="none" />
+        <line stroke="rgb(0, 138, 255)" id="svg_4" y2="1" x2="8.989895" y1="1" x1="99.666661" stroke-width="2" fill="none" />
+        <line id="svg_5" stroke="rgb(0, 138, 255)" y2="31.166662" x2="7.832443" y1="31.166662" x1="100.109209" stroke-width="2" fill="none" />
+      </g>
+    </defs>
+  </svg>
+
+<h2 class="headline pulse" style="margin-top: 20px;">
+
+  <div class="lines">
+
+    <svg class="left" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+      <g id="headline">
+        <use xlink:href="#line" />
+      </g>
+    </svg>
+
+  </div>
+
+  <span class="text">chọn nghề theo cách của bạn</span>
+
+  <div class="lines">
+
+    <svg class="right" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+      <g id="headline">
+        <use xlink:href="#line" />
+      </g>
+    </svg>
+
+  </div>
+
+</h2>
+    <ul class="quiz-step step1 current" >
+        <li class="question">
+            <div class="question-wrap">
+            <h3 class="textquestion">Câu hỏi #1:<%=listquestion.name%> ?</h3>
+            </div>
+        </li>
+        <div class="lquestion">
+        <li class="quiz-answer low-value" data-quizIndex="2">
+            <div class="answer-wrap" onclick="nextquestion(0)"> 
+                <p class="answer-text"><%=listquestion.answer[0].name%></p>
+            </div>
+            <p class="notehuy"><%=listquestion.answer[1].note%></p>
+
+        </li>
+        <li class="quiz-answer high-value" data-quizIndex="4">
+            <div class="answer-wrap" onclick="nextquestion(1)"> 
+                <p class="answer-text"><%=listquestion.answer[1].name%></p>
+            </div>
+              <p class="notehuy"><%=listquestion.answer[1].note%></p>
+        </li>
+        </div>
+    </ul>
+    
+    <ul id="results" >
+        <li class="results-inner">
+            <p>Kết quả của bạn</p>
+            <h1></h1>
+            <p class="desc"></p>
+        </li>
+           <li style="width: 100%;" >
+            <div class="answer-wrap" > 
+            <a href="/">    <p class="answer-text">thử lại</p></a>
+            </div>
+
+        </li>
+         
+    </ul>
+
+
+</div>
+</div>
+</div>
+<script src='/dist/js/jquery.min.js'></script>
+
+<script type="text/javascript">
+
+</script>
+</body>
+  <script type="text/javascript">
+  var dem=1;
+    var danhsach=   <%- JSON.stringify(listquestion)%>;
+function nextquestion(poanswer){
+// danhsach=danhsach.answer[parseInt(poanswer)];
+
+if(danhsach.question==null){
+if(danhsach.answer[poanswer].end!=null){
+$(".quiz-step").hide();
+ $(".desc").html('<h4>'+
+    danhsach.answer[poanswer].end.name+'</h4> </br>'+'<h5>'+danhsach.answer[poanswer].end.note+'</h5>');
+
+
+    // alert("kết thúc");
+    $("#results").fadeIn( "slow");
+}else{
+    if(danhsach.answer[poanswer].question.name==null)
+    {
+        alert("dữ liệu bị thiếu hụt vui lòng chọn đáp án khác");
+    }else
+   danhsach=danhsach.answer[poanswer].question;
+   if(danhsach.name==null){
+    alert("dữ liệu thiếu");
+   }else{
+dem++;
+$(".textquestion").text("Câu hỏi #"+dem+":"+danhsach.name);
+
+// alert("huy1111 "+JSON.stringify(danhsach));
+var textcong="";
+for (var i = 0; i < danhsach.answer.length; i++) {
+   
+
+
+  textcong+= '<li class="quiz-answer low-value" data-quizIndex="2"><div class="answer-wrap" onclick="nextquestion('+
+  i+')"> <p class="answer-text">'+danhsach.answer[i].name+'</p></div> <p class="notehuy">'+danhsach.answer[i].note+'</p></li>';
+
+}
+ $(".lquestion").hide();
+ $(".lquestion").html(textcong)
+  $(".lquestion").show("slow");
+}
+} 
+
+} 
+
+// danhsach=danhsach.question[poanswer];
+// alert("huy "+JSON.stringify(danhsach));
+// $(".textquestion").text(danhsach.name);
+
+}
+
+
+
+                                       
+                                                  
+                                                    
+                                        </script>
+</html>

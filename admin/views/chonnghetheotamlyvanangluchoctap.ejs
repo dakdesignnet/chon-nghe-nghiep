@@ -1,0 +1,473 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <title>Chọn nghề theo cách của bạn</title>
+      <meta name="description" content="ứng dụng chọn nghề theo cách của bạn" />
+      <meta name="keywords" content="ứng dụng chọn nghề, ứng dụng chọn nghề nghiệp phù hợp, ứng dụng chọn nghề tương lai" />
+
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+      <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+      <link href="/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+      <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>  
+      <!-- Custom CSS -->
+      <link href="/dist/css/stylechonnghe.css" rel="stylesheet" type="text/css">
+      <script src='/dist/js/jquery.min.js'></script>
+   </head>
+   <body>
+     <div class="wsmenucontainer">
+
+    <% include partials/menu %> 
+  <div class="wrapper">
+
+      <div id="quizzie">
+         <svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" height="0">
+            <defs>
+               <g id="line">
+                  <line id="svg_1" y2="15.666668" x2="99.666662" y1="15.666668" x1="0.999995" stroke-width="2" stroke="rgb(0, 138, 255)" fill="none" />
+                  <line stroke="rgb(0, 138, 255)" id="svg_4" y2="1" x2="8.989895" y1="1" x1="99.666661" stroke-width="2" fill="none" />
+                  <line id="svg_5" stroke="rgb(0, 138, 255)" y2="31.166662" x2="7.832443" y1="31.166662" x1="100.109209" stroke-width="2" fill="none" />
+               </g>
+            </defs>
+         </svg>
+         <h2 class="headline pulse" style="margin-top: 20px;">
+            <div class="lines">
+               <svg class="left" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+                  <g id="headline">
+                     <use xlink:href="#line" />
+                  </g>
+               </svg>
+            </div>
+            <span class="text">chọn nghề theo theo tâm lý và năng lực</span>
+            <div class="lines">
+               <svg class="right" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 205 33">
+                  <g id="headline">
+                     <use xlink:href="#line" />
+                  </g>
+               </svg>
+            </div>
+         </h2>
+         <h2 id="tieude" style="font-size: 1.3em">  Kiểu người Hoạt động giao tiếp sự vụ !</h2>
+         <table class="bang1" id="bang1" width="480" border="0" align="center" cellpadding="0" cellspacing="0" class="bao" style="color: #666;" >
+            <tbody>
+               <tr>
+                  <td valign="top" class="khongvien">
+                     <table width="530" border="0" align="center" cellpadding="4" cellspacing="2" style="border-collapse:collapse;
+                        font-family: 'Baloo Tamma', cursive;font-size: 1.2em;color: #fff;" class="bangdulieu">
+                        <tbody>
+                           <tr >
+                              <td ><span class="bao" id="txt0">Lịch sự, niềm nở, giới thiệu hấp dẫn</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio"  data-group="0"  value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="0"  value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="0" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="0"  value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="0" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr >
+                           <tr >
+                              <td ><span class="bao" id="txt1">Nhiệt tình, nhanh nhẹn, ứng xử linh hoạt</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio"  data-group="1" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"   data-group="1" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="1" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="1" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="1" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr >
+                              <td ><span class="bao" id="txt2">Khả năng diễn đạt và lĩnh hội ngôn từ tốt</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio"  data-group="2" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="2" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="2" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"   data-group="2" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="2" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td ><span class="bao" id="txt3">Hiểu biết về lịch sử, văn hóa</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio"  data-group="3" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="3" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="3" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="3" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="3"  value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td ><span class="bao" id="txt4">Làm việc ngăn nắp, thận trọng, cẩn thận, không lầm lẫn</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio" value="1" data-group="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="4" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="4" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="4" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="4" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td ><span class="bao" id="txt5">Khí chất, tính cách: linh hoạt, sôi nổi – hướng ngoại, điềm tĩnh – hướng nội</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio" data-group="5" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="5" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="5" value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="5"  value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="5"  value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td  ><span class="bao" id="txt6">Học khá các môn khoa học xã hội (Văn, Sử, Địa, ngoại ngữ).</span></td>
+                              <td   style="width: 160px">
+                                 <span class="bao">
+                                    <form>
+                                       <div data-field="cf_783" class="stars-container">
+                                          <input type="radio" data-group="6" value="1" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="6" value="2" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="6"  value="3" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio"  data-group="6" value="4" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                          <input type="radio" data-group="6" value="5" name="stars-rating">
+                                          <i class="fa fa-star" aria-hidden="true"></i>
+                                       </div>
+                                    </form>
+                                 </span>
+                              </td>
+                           </tr>
+                          
+                    
+                        </tbody>
+                     </table>
+            </tbody>
+         </table>
+         <ul class="quiz-step step1 current" id="andi" >
+            <div class="lquestion">
+               <li class="quiz-answer low-value question" data-quizIndex="2" style="margin-bottom: 0px;padding-bottom: 0px;">
+                  <p class="notehuy">Điểm :</p>
+                  <div class="answer-wrap " style="width: 200px;margin: 0 auto;"  onclick="tiep();">
+                     <p class="answer-text" id="txttiep">tiếp</p>
+                  </div>
+               </li>
+            </div>
+         </ul>
+         <ul id="results" >
+            <li class="results-inner">
+               <h1>Kết quả của bạn</h1>
+               <h2 id="titleresults"></h2>
+           
+               <p style="color:#d0f9c7; " id="nghanhresults"></p>
+                   <a id="noteresults"></a>
+            </li>
+            <li style="width: 100%;" >
+               <div class="answer-wrap" >
+                  <a href="/">
+                     <p class="answer-text">thử lại</p>
+                  </a>
+               </div>
+            </li>
+         </ul>
+      </div>
+
+</div>
+</div>
+      <script>
+       swal({   
+                 title: "hướng dẫn!",   
+                 text: "hãy đánh giá chính bản thân mình với \n 1 ★  Bạn thấy ý đó chưa bao giờ đúng với bạn      \n"
+                 +"2 ★ Chỉ thấy ý đó chỉ đúng trong một vài trường hợp  \n"+
+                 "3 ★ Bạn thấy ý đó chỉ một nửa là đúng với bạn\n"+
+                 "4 ★ Bạn thấy ý đó gần như là đúng với bạn trong hầu hết mọi trường hợp\n"+
+                 "5 ★ Bạn thấy ý đó là hoàn toàn đúng với bạn, không thể nào khác đi được \n",   
+                 type: "warning",   
+                 showCancelButton: true,   
+                 confirmButtonColor: "#e69a2a",   
+                 confirmButtonText: "tôi đã hiểu!",   
+                 closeOnConfirm: true 
+             }, function(){  })
+        
+           var kt=true;
+         
+         var dangovitri=1;
+         var listtieude=["Realistic - Người thực tế","Hoạt động giao tiếp trí tuệ","Hoạt động khoa học kỹ thuật","Hoạt động thực hành kỹ thuật","Hoạt động lao động thủ công","Hoạt động tư duy trìu tượng","Hoạt động không sáng tạo"];
+         
+         var listquestion= new Array(); 
+         listquestion[0]= new Array(
+            "Lịch sự, niềm nở, giới thiệu hấp dẫn",
+            "Nhiệt tình, nhanh nhẹn, ứng xử linh hoạt",
+            "Khả năng diễn đạt và lĩnh hội ngôn từ tốt",
+            "THiểu biết về lịch sử, văn hóa","Làm việc ngăn nắp, thận trọng, cẩn thận, không lầm lẫn",
+            "Làm việc ngăn nắp, thận trọng, cẩn thận, không lầm lẫn",
+            "Khí chất, tính cách: linh hoạt, sôi nổi – hướng ngoại, điềm tĩnh – hướng nội",
+            "Học khá các môn khoa học xã hội (Văn, Sử, Địa, ngoại ngữ)." );
+         listquestion[1]= new Array(
+            "Nhạy cảm, có óc quan sát",
+            "Kiên trì, nhẫn nại, làm việc có phương pháp, điều độ",
+            "Có năng lực tư duy"
+            ," khả năng giao tiếp tốt",
+            "Có tính quyết đoán, thất bại không nản Khí chất",
+            "tính cách: Điềm tĩnh – hướng nội, linh hoạt – hướng ngoại",
+            "Học khá các môn khoa học xã hội và khoa học tự nhiên (Toán, Lý, Hóa, Sinh)" );
+         listquestion[2]= new Array(
+            "Có óc quan sát, phán đoán"
+            ,"làm chủ kỹ thuật. Làm việc có phương pháp khoa học.",
+            "Kiên trì, bền bỉ, chịu đựng khó khăn",
+            "Có tính quyết đoán, xử lý nhanh các tình huống.",
+            " Khí chất, tính cách: điềm tĩnh – hướng nội; linh hoạt – hướng ngoại.",
+            "Học khá các môn khoa học tự nhiên.",
+            "có khả năng viết, trình bày những ý tưởng của mình");
+         listquestion[3]= new Array(
+            "Say mê, nghiêm túc thực hiện các quy trình kỹ thuật, có óc sáng tạo, khéo tay, làm việc lỉ mỉ.",
+            "Chịu đựng được trạng thái làm việc căng thẳng.",
+            "Kiên trì, bền bỉ, dẻo dai, có sức khỏe tốt.",
+            "Có trí tưởng tượng không gian. Nhạy cảm, khả năng chú ý tốt",
+            "Khí chất, tính cách: ưu tư, điềm tĩnh – hướng nội",
+            "Học khá các môn khoa học tự nhiên",
+            "Kiên trì, bền bỉ, dẻo dai, có sức khỏe tốt."
+        );
+                  listquestion[4]= new Array(
+            "Rất khéo tay, làm việc cẩn thận, tỉ mỉ, ngăn nắp, có ý thức tìm tòi cái mới",
+            "Kiên trì, nhẫn nại.",
+            "Thị lực và khả năng phân tích màu sắc tốt",
+            "Có kiến thức văn hóa phổ thông.",
+            "Học khá các môn khoa học tự nhiên",
+                "Kiên trì, bền bỉ, dẻo dai, có sức khỏe tốt.",
+            
+            "có thể làm việc liên tục được");
+
+
+    listquestion[5]= new Array(
+            "Nhạy cảm, có khả năng tư duy tốt.",
+            "Kiên trì, nhẫn nại, ham hiểu biết, có óc sáng tạo và khả năng quan sát tinh tế",
+            "Có khả năng phân tích và tổng hợp tốt",
+            "Có trí tưởng tượng không gian và nhận biết tốt hình dạng vật thể.",
+            "Khí chất, tính cách: ưu tư – hướng nội",
+            "Học khá các môn khoa học xã hội hoặc khoa học tự nhiên",
+                "chịu được áp lực công việc");
+   listquestion[6]= new Array(
+            "Có ý thức về sự chính xác. Làm việc ngăn nắp và có phương pháp.",
+            "Khả năng tập trung chú ý tốt.",
+            "Có sức khỏe tốt, bền bỉ, cần cù, chịu đựng được sự căng thẳng thần kinh của môi trường làm việc.",
+            "Khí chất, tính cách: ưu tư, điềm tĩnh – hướng nội",
+            "Có kiến thức văn hóa phổ thông.",
+            "Khí chất, tính cách: ưu tư – hướng nội",
+            "Học khá các môn khoa học xã hội hoặc khoa học tự nhiên");
+
+           var listtketqua=[
+           {title:"Kiểu người Hoạt động giao tiếp sự vụ",note:"Người thuộc nhóm sở thích nghề nghiệp này thường có khả năng về kỹ thuật, công nghệ, hệ thống; ưa thích làm việc với đồ vật, máy móc, động thực vật; thích làm các công việc ngoài trời.",nghanh:"Nhân viên bán hàng, tiếp thị, quảng cáo, Tiếp viên thương mại, du lịch, nhà hàng, khách sạn,Nhân viên ngân hàng, bưu điện, y tế & các dịch vụ công cộng"},
+
+           {title:"Kiểu người Hoạt động giao tiếp trí tuệ",note:"Có khả năng về quan sát, khám phá, phân tích đánh giá và giải quyết các vấn đề.",nghanh:"Lãnh đạo, quản lý nhà nước, tổ chức kinh tế,Giáo viên, nhà giáo dục, nhà báo, luật sư, bác sĩ…,Cán bộ, nhân viên các đoàn thể, các ngành văn hóa, pháp lý…"},
+
+           {title:" Kiểu người Hoạt động khoa học kỹ thuật",note:"Có khả năng về nghệ thuật, khả năng về trực giác, khả năng tưởng tượng cao, thích làm việc trong các môi trường mang tính ngẫu hứng, không khuôn mẫu.",nghanh:"Cán bộ, nhân viên làm công tác nghiên cứu, thực nghiệm.,Người quản lý các ngành khoa học kỹ thuật, khoa học xã hội., Kỹ sư, cán bộ nhân viên kỹ thuật trong các ngành kỹ thuật xây dựng, giao thông, cơ khí, điện…"},
+
+           {title:"Kiểu người Hoạt động thực hành kỹ thuật",note:"Có khả năng về ngôn ngữ, giảng giải, thích làm những việc như giảng giải, cung cấp thông tin, sự chăm sóc, giúp đỡ, hoặc huấn luyện cho người khác.",nghanh:" Kỹ sư thực hành, cán bộ làm nhiệm vụ chế tạo, sản xuất, kiểm tra trong các ngành công – nông nghiệp, nhân viên theo dõi điều khiển các hệ thống điện – điện tử, công nhân gia công, sửa chữa, sản xuất các sản phẩm…"},
+
+           {title:"Kiểu người Hoạt động lao động thủ công",note:"Có khả năng về kinh doanh, mạnh bạo, dám nghĩ dám làm, có thể gây ảnh hưởng, thuyết phục người khác, có khả năng quản lý.",nghanh:" Công nhân sửa chữa lắp ráp các chi tiết nhỏ. Thợ thủ công sản xuất hàng mỹ nghệ bằng các vật liệu khác nhau: vàng, bạc, mây tre, lá…"},
+
+           {title:"Kiểu người Hoạt động tư duy trìu tượng",note:"Có khả năng về số học, thích thực hiện những công việc chi tiết, thích làm việc với những số liệu, theo chỉ dẫn của người khác hoặc các công việc văn phòng.",nghanh:"Cán bộ làm việc trong lĩnh vực nghiên cứu khoa học, triết học, nghệ thuật…Người sáng tác, thiết kế trong lĩnh vực mỹ thuật, nghệ thuật, kiến trúc sư, nhà văn, họa sĩ, nhạc sĩ…"},
+
+                {title:"Kiểu người Hoạt động không sáng tạo",note:"Có khả năng về kinh doanh, mạnh bạo, dám nghĩ dám làm, có thể gây ảnh hưởng, thuyết phục người khác, có khả năng quản lý.",nghanh:" Công nhân thi công các công trình xây dựng giao thông, vận tải, chế biến nông, lâm sản.Công nhân làm việc trong các dây chuyền sản xuất, các xí nghiệp chăn nuôi, công nhân điều khiển các phương tiện bốc dỡ…"}];
+         var listsum = [0, 0,0,0, 0,0, 0];
+         var listdiem = [-1, -1, -1,-1, -1, -1,-1];
+         jQuery(function($){
+         
+         let dbg = $("#debug-output");
+         let numTimesClicked = $("#num-times-clicked");
+         $(document).on("click", ".stars-container input[type='radio']", function(e){
+         me=$(this);
+         
+         // alert("by pham hoang huy")
+         
+         let newClickedVal = parseInt(numTimesClicked.html()) + 1;
+         numTimesClicked.html(newClickedVal);
+         dbg.html($("form").serialize());
+         $(this).siblings(".selected-star").removeClass("selected-star");
+         let starsToSelect = $(this).next(".fa-star").add($(this).prevAll(".fa-star"));
+         starsToSelect.addClass("selected-star");
+         listdiem[parseInt(me.data("group"))]=me.val();
+         listsum[dangovitri]=0;
+         kt=false;
+         for (var i = 0; i < 7; i++) {
+         if(parseInt(listdiem[i])==-1){
+         kt=true;
+         
+         }else{
+          listsum[dangovitri]+=  parseInt(listdiem[i]);
+         }
+         }
+         $(".notehuy").html( dangovitri+"/"+listquestion.length+" Điểm: "+   listsum[dangovitri]);
+         
+         });
+         });
+         $(".notehuy").html( dangovitri+"/"+listquestion.length+" Điểm: "+   listsum[dangovitri]);
+         
+         function tiep(){
+         
+         
+         if(kt){
+         swal({   
+                 title: "bạn chưa chọn xong!",   
+                 text: "bạn phải tích hết các đánh giá sao, ít nhất 1 sao!",   
+                 type: "warning",   
+                 showCancelButton: true,   
+                 confirmButtonColor: "#e69a2a",   
+                 confirmButtonText: "tôi đã hiểu!",   
+                 closeOnConfirm: true 
+             }, function(){  })
+         }else{
+         
+         if(dangovitri==listquestion.length){
+         
+         // alert(listsum[0]+"fasdfs"+listsum[1]+"dfasdfsd"+listsum[2])
+         
+         var thanglonnhat=0;
+         var vitrilonnhat=0;
+         listsum.sort(function(a, b){return b - a});
+            
+         for (var i = 0; i <  listsum.length; i++) {
+           if(listsum[i]>thanglonnhat){
+           thanglonnhat=listsum[i];
+         vitrilonnhat=i;
+           }
+         }
+
+     //    listsum.sort(function(a, b){return b – a});
+         swal({   
+                 title: "bạn là :"+listtketqua[0].title,   
+                 text: listtketqua[0].nghanh,   
+                 type: "success",   
+                 showCancelButton: true,   
+                 confirmButtonColor: "#e69a2a",   
+                 confirmButtonText: "đã rõ!",   
+                 closeOnConfirm: true 
+             }, function(){ 
+              
+         
+              })
+         $("#andi").hide();
+         $("#tieude").hide();
+         $("#notehuy").hide();
+         
+         $("#bang1").hide();
+         var stringtam="hoặc bạn thuộc nhóm dưới đây ";
+                   $("#titleresults").html(listtketqua[0].title);
+                  
+          for (var i = 0; i < listtketqua.length; i++) {
+       stringtam+=  "<h"+(i+1)+"  style='text-decoration: underline; margin:0px;' onclick='doiketqua("+i+")'> "+listtketqua[i].title+" </h"+(i+1)+"></br>";
+          }
+               $("#noteresults").html(stringtam);        
+         
+                   $("#nghanhresults").html(listtketqua[0].nghanh);
+         $("#results").show("flow");
+         }else{
+         $("#bang1").siblings(".selected-star").removeClass("selected-star");
+         $("#tieude").html(listtieude[dangovitri]);
+         for (var i = 0; i < listquestion[dangovitri].length; i++) {
+         $("#txt"+i).html(listquestion[dangovitri][i]);
+         }
+         
+            $("#bang1").hide();
+         $("#bang1").show("flow");
+           if(dangovitri==listquestion.length-1)
+         $("#txttiep").html("Hoàn tất");
+         $("i").removeClass("selected-star");
+         dangovitri++;
+         listdiem = [-1, -1, -1,-1, -1, -1,-1];
+         // alert(listsum[0]+"fasdfs"+listsum[1]+"dfasdfsd"+listsum[2])
+         $(".notehuy").html( dangovitri+"/"+listquestion.length+" Điểm: "+   listsum[dangovitri]);
+         
+         }
+         }
+         }
+         function doiketqua(a){
+                $("#andi").hide();
+         $("#tieude").hide();
+         $("#notehuy").hide();
+         
+         $("#bang1").hide();
+                   $("#titleresults").html(listtketqua[a].title);
+                      
+                     var stringtam="hoặc bạn thuộc nhóm dưới đây ";             
+          for (var i = 0; i < listtketqua.length; i++) {
+             if(a!=i)
+       stringtam+=  "<h"+(i+1)+" style='text-decoration: underline; margin:0px;' onclick='doiketqua("+i+")'> "+listtketqua[i].title+" </h"+(i+1)+"></br>";
+            
+          }
+               $("#noteresults").html(stringtam);   
+         
+                   $("#nghanhresults").html(listtketqua[a].nghanh);
+         $("#results").show("flow"); 
+         }
+      </script>
+   </body>
+</html>-
